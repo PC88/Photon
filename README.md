@@ -15,7 +15,7 @@ jpg version:
 
 ![jpg-version](Photon/Images/10_samples_pp.jpg)
 
-![CPU starting render 10000 samples per pixe](Photon/Images/10000_samples_pp.ppm)
+![CPU starting render 10000 samples per pixel](Photon/Images/10000_samples_pp.ppm)
 
 jpg version:
 
