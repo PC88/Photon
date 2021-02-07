@@ -1,6 +1,5 @@
 #include "iostream"
 #include "RT1W/vec3.h"
-#include "Vendor/glm/glm.hpp"
 #include "RT1W/ray.h"
 #include "RT1W/hittable.h"
 #include "RT1W/sphere.h"
