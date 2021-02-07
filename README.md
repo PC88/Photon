@@ -9,13 +9,13 @@ and the specific branch of creation is: https://github.com/PC88/CPU_RT/tree/Phot
 
 Initial renders of this branch are detailed below, 10 samples per pixel and 10000 samples per pixel for comparison.
 
-![initial image ppm format](Photon/Images/10_samples_pp.ppm)
+![CPU starting render 10 samples per pixel](Photon/Images/10_samples_pp.ppm)
 
 jpg version:
 
 ![jpg-version](Photon/Images/10_samples_pp.jpg)
 
-![initial image ppm format](Photon/Images/10000_samples_pp.ppm)
+![CPU starting render 10000 samples per pixe](Photon/Images/10000_samples_pp.ppm)
 
 jpg version:
 
