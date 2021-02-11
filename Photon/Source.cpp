@@ -317,14 +317,12 @@ hittable_list final_scene()
 int main()
 {
 	// Image
-	
 	auto aspect_ratio = 16.0 / 9.0;
 	int image_width = 400;
 	int samples_per_pixel = 100;
 	const int max_depth = 50;
 
 	// World
-
 	hittable_list world;
 
 	point3 lookfrom;
