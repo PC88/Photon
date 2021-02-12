@@ -1,6 +1,11 @@
 
-#include "iostream"
-#include "RT1W/vec3.h"
+#include <iostream>
+
+
+
+#include "Demos/CPU_RT_Demo.h" // this has most of the includes
+
+
 #include "RT1W/ray.h"
 #include "RT1W/hittable.h"
 #include "RT1W/sphere.h"
@@ -18,8 +23,6 @@
 #include "RT1W/bvh.h"
 
 
-
-#include "Demos/CPU_RT_Demo.h" // this has most of the includes
 // demos 
 #include "Demos/DemoManager.h"
 // spdlog

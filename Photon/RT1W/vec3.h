@@ -130,6 +130,10 @@ inline vec3 unit_vector(vec3 v)
 }
 
 
+
+
+// TODO: refactor to stubs, and move to weekend.h
+
 vec3 random_in_unit_sphere()
 {
 	while (true)
