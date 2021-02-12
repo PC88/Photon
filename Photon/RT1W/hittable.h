@@ -7,7 +7,7 @@ using std::shared_ptr;
 using std::make_shared;
 using std::sqrt;
 
-//#include "RT1W/rtweekend.h"
+#include "RT1W/rtweekend.h"
 
 class material;
 
