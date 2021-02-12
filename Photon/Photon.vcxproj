@@ -48,7 +48,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;WIN64;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Photon\Vendor\imgui;$(SolutionDir)Photon\Vendor;$(SolutionDir)Photon\Vendor\spdlog\inlcude;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Photon\Vendor\imgui;$(SolutionDir)Photon\Vendor;$(SolutionDir)Photon;$(SolutionDir)Photon\Vendor\spdlog\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -67,7 +67,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;WIN64;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Photon\Vendor\imgui;$(SolutionDir)Photon\Vendor;$(SolutionDir)Photon\Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Photon\Vendor\imgui;$(SolutionDir)Photon\Vendor;$(SolutionDir)Photon;$(SolutionDir)Photon\Vendor\spdlog\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -85,6 +85,7 @@
     <CudaCompile Include="kernel.cu" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Demos\CPU_RT_Demo.cpp" />
     <ClCompile Include="Demos\Demo.cpp" />
     <ClCompile Include="Demos\DemoManager.cpp" />
     <ClCompile Include="Source.cpp" />
@@ -96,6 +97,7 @@
     <ClCompile Include="Vendor\imgui\imgui_widgets.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Demos\CPU_RT_Demo.h" />
     <ClInclude Include="Demos\Demo.h" />
     <ClInclude Include="Demos\DemoManager.h" />
     <ClInclude Include="Vendor\imgui\imconfig.h" />
