@@ -1,5 +1,4 @@
 #pragma once
-#include "RT1W/rtweekend.h"
 
 class AABB
 {

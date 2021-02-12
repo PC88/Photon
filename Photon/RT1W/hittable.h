@@ -2,6 +2,13 @@
 #include "RT1W/AABB.h"
 #include "RT1W/ray.h"
 
+
+using std::shared_ptr;
+using std::make_shared;
+using std::sqrt;
+
+//#include "RT1W/rtweekend.h"
+
 class material;
 
 struct hit_record 

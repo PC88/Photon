@@ -4,10 +4,11 @@
 
 // vec3.h -done
 // ray.h -done
+// hittable.h
+
 #include "Demos/CPU_RT_Demo.h" // this has most of the includes
 
 
-#include "RT1W/hittable.h"
 #include "RT1W/sphere.h"
 #include "RT1W/hittable_list.h"
 #include "RT1W/camera.h"
