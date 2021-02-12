@@ -9,7 +9,7 @@
 #endif
 
 #define STB_IMAGE_IMPLEMENTATION
-#include "Vendor/stb_image.h"
+#include "Vendor/stb_image/stb_image.h"
 
 // Restore warning levels.
 #ifdef _MSC_VER

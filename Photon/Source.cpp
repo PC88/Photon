@@ -1,3 +1,4 @@
+
 #include "iostream"
 #include "RT1W/vec3.h"
 #include "RT1W/ray.h"
@@ -15,6 +16,18 @@
 #include "RT1W/box.h"
 #include "RT1W/constant_medium.h"
 #include "RT1W/bvh.h"
+
+
+
+#include "Demos/CPU_RT_Demo.h" // this has most of the includes
+// demos 
+#include "Demos/DemoManager.h"
+// spdlog
+#include "spdlog/spdlog.h"
+// imgui
+#include "imgui/imgui.h"
+
+// test commit of dependency branch.
 
 /// This will be an evolving merge of my attempts to understand much of ray tracing by
 /// merging my own understanding, with that of Peter Shirley`s RT in one weekend series,
@@ -315,14 +328,12 @@ hittable_list final_scene()
 int main()
 {
 	// Image
-	
 	auto aspect_ratio = 16.0 / 9.0;
 	int image_width = 400;
 	int samples_per_pixel = 100;
 	const int max_depth = 50;
 
 	// World
-
 	hittable_list world;
 
 	point3 lookfrom;
