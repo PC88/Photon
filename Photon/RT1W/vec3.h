@@ -6,6 +6,7 @@ using std::sqrt;
 
 // include commented out above due to errors, the linkage of globals is global, meaning:
 // the definition of the function can be linked, but the declaration cannot - hence the second definition here - PC
+// this is now being extended to these stubs - which are moved to rtweekend.h
 double random_double();
 double random_double(double min, double max);
 
@@ -129,65 +130,14 @@ inline vec3 unit_vector(vec3 v)
 	return v / v.length();
 }
 
-
-
-
-// TODO: refactor to stubs, and move to weekend.h
-
-vec3 random_in_unit_sphere()
-{
-	while (true)
-	{
-		auto p = vec3::random(-1, 1);
-		if (p.length_squared() >= 1) continue;
-		return p;
-	}
-}
-
-vec3 random_unit_vector() 
-{
-	// this is not optimal definition, but it will do for now
-	const double pi = 3.1415926535897932385;
-
-	auto a = random_double(0, 2 * pi);
-	auto z = random_double(-1, 1);
-	auto r = sqrt(1 - z * z);
-	return vec3(r*cos(a), r*sin(a), z);
-}
-
-vec3 random_in_hemisphere(const vec3& normal) 
-{
-	vec3 in_unit_sphere = random_in_unit_sphere();
-	if (dot(in_unit_sphere, normal) > 0.0) // In the same hemisphere as the normal
-		return in_unit_sphere;
-	else
-		return -in_unit_sphere;
-}
-
-// "The reflected ray direction in red is just v+2b. In our design"
-vec3 reflect(const vec3& v, const vec3& n) 
-{
-	return v - 2 * dot(v, n)*n;
-}
-
-vec3 refract(const vec3& uv, const vec3& n, double etai_over_etat) 
-{
-	auto cos_theta = dot(-uv, n);
-	vec3 r_out_perp = etai_over_etat * (uv + cos_theta * n);
-	vec3 r_out_parallel = -sqrt(fabs(1.0 - r_out_perp.length_squared())) * n;
-	return r_out_perp + r_out_parallel;
-}
-
-vec3 random_in_unit_disk() 
-{
-	while (true) 
-	{
-		auto p = vec3(random_double(-1, 1), random_double(-1, 1), 0);
-		if (p.length_squared() >= 1) continue;
-		return p;
-	}
-}
-
 // Type aliases for vec3
 using point3 = vec3;   // 3D point
-using color = vec3;    // RGB 
+using color = vec3;    // RGB
+
+// needs to be defined below the .h - re-factored
+vec3 random_in_unit_disk();
+vec3 refract(const vec3& uv, const vec3& n, double etai_over_etat);
+vec3 reflect(const vec3& v, const vec3& n);
+vec3 random_in_hemisphere(const vec3& normal);
+vec3 random_unit_vector();
+vec3 random_in_unit_sphere();
