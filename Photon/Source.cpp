@@ -16,6 +16,13 @@
 #include "RT1W/constant_medium.h"
 #include "RT1W/bvh.h"
 
+// demos 
+#include "Demos/DemoManager.h"
+// spdlog
+#include "spdlog/spdlog.h"
+// imgui
+#include "imgui/imgui.h"
+
 // test commit of dependency branch.
 
 /// This will be an evolving merge of my attempts to understand much of ray tracing by
