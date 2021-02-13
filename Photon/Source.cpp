@@ -3,8 +3,8 @@
 
 
 // vec3.h -done
-// ray.h -done
-// hittable.h
+// ray.h -donelll
+// hittable.h - this is included somewhere down the list - todo:find where
 
 #include "Demos/CPU_RT_Demo.h" // this has most of the includes
 
