@@ -3,7 +3,7 @@
 
 
 // vec3.h -done
-// ray.h -donelll
+// ray.h -done
 // hittable.h - this is included somewhere down the list - todo:find where
 
 #include "Demos/CPU_RT_Demo.h" // this has most of the includes
@@ -334,7 +334,7 @@ int main()
 	// Image
 	auto aspect_ratio = 16.0 / 9.0;
 	int image_width = 400;
-	int samples_per_pixel = 100;
+	int samples_per_pixel = 10; // was 100
 	const int max_depth = 50;
 
 	// World
