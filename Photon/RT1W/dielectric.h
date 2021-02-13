@@ -19,18 +19,18 @@ public:
 		double sin_theta = sqrt(1.0 - cos_theta * cos_theta);
 		if (etai_over_etat * sin_theta > 1.0) 
 		{
-			vec3 reflected = reflect(unit_direction, rec.normal);
+			vec3 reflected = UtilityManager::instance().reflect(unit_direction, rec.normal);
 			scattered = ray(rec.p, reflected);
 			return true;
 		}
 		double reflect_prob = schlick(cos_theta, etai_over_etat);
 		if (random_double() < reflect_prob)
 		{
-			vec3 reflected = reflect(unit_direction, rec.normal);
+			vec3 reflected = UtilityManager::instance().reflect(unit_direction, rec.normal);
 			scattered = ray(rec.p, reflected);
 			return true;
 		}
-		vec3 refracted = refract(unit_direction, rec.normal, etai_over_etat);
+		vec3 refracted = UtilityManager::instance().refract(unit_direction, rec.normal, etai_over_etat);
 		scattered = ray(rec.p, refracted);
 		return true;
 	}

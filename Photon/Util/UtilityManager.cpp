@@ -1,6 +1,12 @@
 #include "UtilityManager.h"
 #include "RT1W/vec3.h"
 
+// base includes from RT1W utils
+#include <cmath>
+#include <cstdlib>
+#include <limits>
+#include <memory>
+
 UtilityManager& UtilityManager::instance()
 {
 	static UtilityManager _self;

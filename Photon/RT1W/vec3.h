@@ -2,13 +2,15 @@
 #include <cmath>
 #include <iostream>
 
+#include "Util\UtilityManager.h"
+
 using std::sqrt;
 
 // include commented out above due to errors, the linkage of globals is global, meaning:
 // the definition of the function can be linked, but the declaration cannot - hence the second definition here - PC
 // this is now being extended to these stubs - which are moved to rtweekend.h
-double random_double();
-double random_double(double min, double max);
+//double random_double();
+//double random_double(double min, double max);
 
 
 class vec3
@@ -60,12 +62,16 @@ public:
 
 	inline static vec3 random()
 	{
-		return vec3(random_double(), random_double(), random_double());
+		return vec3(UtilityManager::instance().random_double(),
+			UtilityManager::instance().random_double(),
+			UtilityManager::instance().random_double());
 	}
 
 	inline static vec3 random(double min, double max)
 	{
-		return vec3(random_double(min, max), random_double(min, max), random_double(min, max));
+		return vec3(UtilityManager::instance().random_double(min, max),
+			UtilityManager::instance().random_double(min, max), 
+			UtilityManager::instance().random_double(min, max));
 	}
 
 
@@ -135,9 +141,9 @@ using point3 = vec3;   // 3D point
 using color = vec3;    // RGB
 
 // needs to be defined below the .h - re-factored
-vec3 random_in_unit_disk();
-vec3 refract(const vec3& uv, const vec3& n, double etai_over_etat);
-vec3 reflect(const vec3& v, const vec3& n);
-vec3 random_in_hemisphere(const vec3& normal);
-vec3 random_unit_vector();
-vec3 random_in_unit_sphere();
+//vec3 random_in_unit_disk();
+//vec3 refract(const vec3& uv, const vec3& n, double etai_over_etat);
+//vec3 reflect(const vec3& v, const vec3& n);
+//vec3 random_in_hemisphere(const vec3& normal);
+//vec3 random_unit_vector();
+//vec3 random_in_unit_sphere();
