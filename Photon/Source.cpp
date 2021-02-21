@@ -8,7 +8,6 @@
 
 #include "Demos/CPU_RT_Demo.h" // this has most of the includes
 
-
 #include "RT1W/sphere.h"
 #include "RT1W/hittable_list.h"
 #include "RT1W/camera.h"
@@ -22,7 +21,6 @@
 #include "RT1W/box.h"
 #include "RT1W/constant_medium.h"
 #include "RT1W/bvh.h"
-
 
 // demos 
 #include "Demos/DemoManager.h"
