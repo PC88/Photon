@@ -12,6 +12,10 @@ public:
 
 	virtual bool bounding_box(double t0, double t1, AABB& output_box) const override;
 
+	virtual ~translate()
+	{
+
+	}
 public:
 	std::shared_ptr<hittable> ptr;
 	vec3 offset;

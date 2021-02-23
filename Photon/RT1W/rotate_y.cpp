@@ -1,6 +1,7 @@
 #include "RT1W\rotate_y.h"
 
 rotate_y::rotate_y(std::shared_ptr<hittable> p, double angle)
+	: ptr(p)
 {
 	auto radians = UtilityManager::instance().degrees_to_radians(angle);
 	sin_theta = sin(radians);
@@ -73,8 +74,4 @@ bool rotate_y::hit(const ray& r, double t_min, double t_max, hit_record& rec) co
 	return true;
 }
 
-bool rotate_y::bounding_box(double t0, double t1, AABB& output_box) const
-{
-	output_box = bbox;
-	return hasbox;
-}
+//bool rotate_y::bounding_box(double t0, double t1, AABB& output_box) const

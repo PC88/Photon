@@ -11,6 +11,7 @@
 // includes moved here from rtweekend.h
 
 class vec3; // forward dec
+class AABB;
 
 class UtilityManager
 {
@@ -41,9 +42,7 @@ public:
 	// was inline
 	int random_int(int min, int max);
 
-	///////////////////////////////////////////////////
 	///////////////////////////// MOVED FROM VEC 3.H //
-	///////////////////////////////////////////////////
 	vec3 random_in_unit_disk();
 
 	vec3 refract(const vec3& uv, const vec3& n, double etai_over_etat);
@@ -56,15 +55,13 @@ public:
 	vec3 random_unit_vector();
 
 	vec3 random_in_unit_sphere();
-	///////////////////////////////////////////////////
 	///////////////////////////// MOVED FROM SPHERE.H//
-	///////////////////////////////////////////////////
 
 	void get_sphere_uv(const vec3& p, double& u, double& v);
 
-	///////////////////////////////////////////////////
-	///////////////////////////// MOVED FROM SPHERE.H//
-	///////////////////////////////////////////////////
+	///////////////////////////// MOVED FROM AABB.H//
+	AABB surrounding_box(AABB box0, AABB box1);
+
 private:
 	UtilityManager();
 	virtual ~UtilityManager();

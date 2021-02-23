@@ -76,6 +76,6 @@ bool moving_sphere::bounding_box(double t0, double t1, AABB& output_box) const
 	AABB box1(
 		center(t1) - vec3(radius, radius, radius),
 		center(t1) + vec3(radius, radius, radius));
-	output_box = surrounding_box(box0, box1);
+	output_box = UtilityManager::instance().surrounding_box(box0, box1);
 	return true;
 }

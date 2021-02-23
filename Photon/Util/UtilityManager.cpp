@@ -1,5 +1,6 @@
 #include "UtilityManager.h"
 #include "RT1W/vec3.h"
+#include "RT1W/AABB.h"
 
 // base includes from RT1W utils
 #include <cmath>
@@ -107,6 +108,19 @@ void UtilityManager::get_sphere_uv(const vec3& p, double& u, double& v)
 	auto theta = asin(p.y());
 	u = 1 - (phi + pi) / (2 * pi);
 	v = (theta + pi / 2) / pi;
+}
+
+AABB UtilityManager::surrounding_box(AABB box0, AABB box1)
+{
+	point3 small(fmin(box0.min().x(), box1.min().x()),
+		fmin(box0.min().y(), box1.min().y()),
+		fmin(box0.min().z(), box1.min().z()));
+
+	point3 big(fmax(box0.max().x(), box1.max().x()),
+		fmax(box0.max().y(), box1.max().y()),
+		fmax(box0.max().z(), box1.max().z()));
+
+	return AABB(small, big);
 }
 
 UtilityManager::~UtilityManager()

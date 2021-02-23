@@ -118,7 +118,7 @@ bvh_node::bvh_node(std::vector<shared_ptr<hittable>>& objects,
 		)
 		std::cerr << "No bounding box in bvh_node constructor.\n";
 
-	box = surrounding_box(box_left, box_right);
+	box = UtilityManager::instance().surrounding_box(box_left, box_right);
 }
 
 //bvh_node::bvh_node(
