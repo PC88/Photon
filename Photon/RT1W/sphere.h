@@ -21,14 +21,6 @@ public:
 };
 
 
-void get_sphere_uv(const vec3& p, double& u, double& v)
-{
-	auto phi = atan2(p.z(), p.x());
-	auto theta = asin(p.y());
-	u = 1 - (phi + pi) / (2 * pi);
-	v = (theta + pi / 2) / pi;
-}
-
 bool sphere::hit(const ray& r, double t_min, double t_max, hit_record& rec) const 
 {
 	vec3 oc = r.origin() - center;
@@ -48,7 +40,9 @@ bool sphere::hit(const ray& r, double t_min, double t_max, hit_record& rec) cons
 			rec.p = r.at(rec.t);
 			vec3 outward_normal = (rec.p - center) / radius;
 			rec.set_face_normal(r, outward_normal);
-			get_sphere_uv((rec.p - center) / radius, rec.u, rec.v);
+
+			//re-factored to utility manager for now
+			UtilityManager::instance().get_sphere_uv((rec.p - center) / radius, rec.u, rec.v); 
 			rec.mat_ptr = mat_ptr;
 			return true;
 		}
@@ -60,7 +54,9 @@ bool sphere::hit(const ray& r, double t_min, double t_max, hit_record& rec) cons
 			rec.p = r.at(rec.t);
 			vec3 outward_normal = (rec.p - center) / radius;
 			rec.set_face_normal(r, outward_normal);
-			get_sphere_uv((rec.p - center) / radius, rec.u, rec.v);
+
+			//re-factored to utility manager for now
+			UtilityManager::instance().get_sphere_uv((rec.p - center) / radius, rec.u, rec.v);
 			rec.mat_ptr = mat_ptr;
 			return true;
 		}
