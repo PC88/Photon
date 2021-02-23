@@ -1,4 +1,6 @@
 #pragma once
+#include "RT1W/vec3.h" // includes utility manager.h
+#include "RT1W/ray.h"
 
 class AABB
 {

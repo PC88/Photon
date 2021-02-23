@@ -89,6 +89,7 @@
     <ClCompile Include="Demos\Demo.cpp" />
     <ClCompile Include="Demos\DemoManager.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="RT1W\translate.cpp" />
     <ClCompile Include="Util\UtilityManager.cpp" />
     <ClCompile Include="Vendor\imgui\imgui.cpp" />
     <ClCompile Include="Vendor\imgui\imgui_demo.cpp" />
@@ -122,6 +123,7 @@
     <ClInclude Include="RT1W\sphere.h" />
     <ClInclude Include="RT1W\texture.h" />
     <ClInclude Include="RT1W\vec3.h" />
+    <ClInclude Include="RT1W\translate.h" />
     <ClInclude Include="Util\UtilityManager.h" />
     <ClInclude Include="Vendor\imgui\imconfig.h" />
     <ClInclude Include="Vendor\imgui\imgui.h" />
