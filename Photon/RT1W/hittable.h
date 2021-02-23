@@ -7,8 +7,6 @@
 //using std::make_shared;
 //using std::sqrt;
 
-#include "RT1W/rtweekend.h"
-
 class material;
 
 struct hit_record 
@@ -109,9 +107,9 @@ rotate_y::rotate_y(std::shared_ptr<hittable> p, double angle) : ptr(p)
 		UtilityManager::instance().infinity,
 		UtilityManager::instance().infinity);
 
-	point3 max(-UtilityManager::instance().infinity, // note re written from negitive infinity
-		-UtilityManager::instance().infinity,        // note re written from negitive infinity 
-		-UtilityManager::instance().infinity);       // note re written from negitive infinity 
+	point3 max(-UtilityManager::instance().infinity, // note re written from negative infinity
+		-UtilityManager::instance().infinity,        // note re written from negative infinity 
+		-UtilityManager::instance().infinity);       // note re written from negative infinity 
 
 	for (int i = 0; i < 2; i++) 
 	{

@@ -1,10 +1,10 @@
 #pragma once
 
-#include <memory>
 #include <iostream>
 #include <string>
 
 // includes moved here from rtweekend.h
+#include <memory>
 #include <cmath>
 #include <cstdlib>
 #include <limits>

@@ -1,5 +1,6 @@
 #pragma once
 #include "hittable.h"
+
 class moving_sphere :
 	public hittable
 {

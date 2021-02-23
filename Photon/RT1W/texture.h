@@ -1,6 +1,5 @@
 #pragma once
 
-#include "RT1W\rtweekend.h"
 #include "RT1W\perlin.h"
 #include "RT1W\rtw_stb_image.h"
 

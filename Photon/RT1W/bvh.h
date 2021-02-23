@@ -1,6 +1,5 @@
 #pragma once
 #include <algorithm>
-#include "RT1W/rtweekend.h"
 #include "RT1W/hittable_list.h"
 
 class bvh_node : public hittable 

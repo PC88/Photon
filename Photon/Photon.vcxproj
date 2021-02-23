@@ -118,7 +118,6 @@
     <ClInclude Include="RT1W\moving_sphere.h" />
     <ClInclude Include="RT1W\perlin.h" />
     <ClInclude Include="RT1W\ray.h" />
-    <ClInclude Include="RT1W\rtweekend.h" />
     <ClInclude Include="RT1W\rtw_stb_image.h" />
     <ClInclude Include="RT1W\sphere.h" />
     <ClInclude Include="RT1W\texture.h" />
