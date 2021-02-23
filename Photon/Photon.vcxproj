@@ -88,6 +88,7 @@
     <ClCompile Include="Demos\CPU_RT_Demo.cpp" />
     <ClCompile Include="Demos\Demo.cpp" />
     <ClCompile Include="Demos\DemoManager.cpp" />
+    <ClCompile Include="RT1W\rotate_y.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="RT1W\translate.cpp" />
     <ClCompile Include="Util\UtilityManager.cpp" />
@@ -102,6 +103,7 @@
     <ClInclude Include="Demos\CPU_RT_Demo.h" />
     <ClInclude Include="Demos\Demo.h" />
     <ClInclude Include="Demos\DemoManager.h" />
+    <ClInclude Include="RT1W\rotate_y.h" />
     <ClInclude Include="RT1W\AABB.h" />
     <ClInclude Include="RT1W\aarect.h" />
     <ClInclude Include="RT1W\box.h" />

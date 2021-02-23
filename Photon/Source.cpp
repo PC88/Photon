@@ -11,6 +11,7 @@
 
 // added
 #include "RT1W/translate.h"
+#include "RT1W/rotate_y.h"
 // added
 
 #include "RT1W/hittable_list.h"
