@@ -13,7 +13,7 @@ public:
 	{}
 
 	bvh_node(
-		std::vector<shared_ptr<hittable>>& objects,
+		std::vector<std::shared_ptr<hittable>>& objects,
 		size_t start, size_t end, double time0, double time1);
 
 	virtual bool hit(
@@ -22,12 +22,12 @@ public:
 	virtual bool bounding_box(double t0, double t1, AABB& output_box) const override;
 
 public:
-	shared_ptr<hittable> left;
-	shared_ptr<hittable> right;
+	std::shared_ptr<hittable> left;
+	std::shared_ptr<hittable> right;
 	AABB box;
 };
 
-inline bool box_compare(const shared_ptr<hittable> a, const shared_ptr<hittable> b, int axis) 
+inline bool box_compare(const std::shared_ptr<hittable> a, const std::shared_ptr<hittable> b, int axis) 
 {
 	AABB box_a;
 	AABB box_b;
@@ -39,17 +39,17 @@ inline bool box_compare(const shared_ptr<hittable> a, const shared_ptr<hittable>
 }
 
 
-bool box_x_compare(const shared_ptr<hittable> a, const shared_ptr<hittable> b) 
+bool box_x_compare(const std::shared_ptr<hittable> a, const std::shared_ptr<hittable> b) 
 {
 	return box_compare(a, b, 0);
 }
 
-bool box_y_compare(const shared_ptr<hittable> a, const shared_ptr<hittable> b) 
+bool box_y_compare(const std::shared_ptr<hittable> a, const std::shared_ptr<hittable> b) 
 {
 	return box_compare(a, b, 1);
 }
 
-bool box_z_compare(const shared_ptr<hittable> a, const shared_ptr<hittable> b) 
+bool box_z_compare(const std::shared_ptr<hittable> a, const std::shared_ptr<hittable> b) 
 {
 	return box_compare(a, b, 2);
 }
@@ -74,7 +74,7 @@ bool bvh_node::hit(const ray& r, double t_min, double t_max, hit_record& rec) co
 bvh_node::bvh_node(std::vector<shared_ptr<hittable>>& objects,
 	size_t start, size_t end, double time0, double time1)
 {
-	int axis = random_int(0, 2);
+	int axis = UtilityManager::instance().random_int(0, 2);
 	/*auto comparator = (axis == 0) ? box_x_compare
 		: (axis == 1) ? box_y_compare
 		: box_z_compare;*/

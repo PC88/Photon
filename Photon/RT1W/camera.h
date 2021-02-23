@@ -12,7 +12,7 @@ public:
 		double t0 = 0,
 		double t1 = 0)
 	{
-		auto theta = degrees_to_radians(vfov);
+		auto theta = UtilityManager::instance().degrees_to_radians(vfov);
 		auto h = tan(theta / 2);
 		auto viewport_height = 2.0 * h;
 		auto viewport_width = aspect_ratio * viewport_height;

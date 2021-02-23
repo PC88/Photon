@@ -3,6 +3,13 @@
 #include <memory>
 #include <iostream>
 #include <string>
+
+// includes moved here from rtweekend.h
+#include <cmath>
+#include <cstdlib>
+#include <limits>
+// includes moved here from rtweekend.h
+
 class vec3; // forward dec
 
 class UtilityManager

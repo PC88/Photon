@@ -126,7 +126,7 @@ private:
 	{
 		for (int i = n - 1; i > 0; i--) 
 		{
-			int target = random_int(0, i);
+			int target = UtilityManager::instance().random_int(0, i);
 			int tmp = p[i];
 			p[i] = p[target];
 			p[target] = tmp;

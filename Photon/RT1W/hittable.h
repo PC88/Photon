@@ -3,9 +3,9 @@
 #include "RT1W/ray.h"
 
 
-using std::shared_ptr;
-using std::make_shared;
-using std::sqrt;
+//using std::shared_ptr;
+//using std::make_shared;
+//using std::sqrt;
 
 #include "RT1W/rtweekend.h"
 
@@ -40,7 +40,7 @@ public:
 class translate : public hittable 
 {
 public:
-	translate(shared_ptr<hittable> p, const vec3& displacement)
+	translate(std::shared_ptr<hittable> p, const vec3& displacement)
 		: ptr(p), offset(displacement) {}
 
 	virtual bool hit(
@@ -49,7 +49,7 @@ public:
 	virtual bool bounding_box(double t0, double t1, AABB& output_box) const override;
 
 public:
-	shared_ptr<hittable> ptr;
+	std::shared_ptr<hittable> ptr;
 	vec3 offset;
 };
 
@@ -80,7 +80,7 @@ bool translate::bounding_box(double t0, double t1, AABB& output_box) const
 class rotate_y : public hittable 
 {
 public:
-	rotate_y(shared_ptr<hittable> p, double angle);
+	rotate_y(std::shared_ptr<hittable> p, double angle);
 
 	virtual bool hit(
 		const ray& r, double t_min, double t_max, hit_record& rec) const override;
@@ -91,22 +91,27 @@ public:
 	}
 
 public:
-	shared_ptr<hittable> ptr;
+	std::shared_ptr<hittable> ptr;
 	double sin_theta;
 	double cos_theta;
 	bool hasbox;
 	AABB bbox;
 };
 
-rotate_y::rotate_y(shared_ptr<hittable> p, double angle) : ptr(p) 
+rotate_y::rotate_y(std::shared_ptr<hittable> p, double angle) : ptr(p) 
 {
-	auto radians = degrees_to_radians(angle);
+	auto radians = UtilityManager::instance().degrees_to_radians(angle);
 	sin_theta = sin(radians);
 	cos_theta = cos(radians);
 	hasbox = ptr->bounding_box(0, 1, bbox);
 
-	point3 min(infinity, infinity, infinity);
-	point3 max(-infinity, -infinity, -infinity);
+	point3 min(UtilityManager::instance().infinity, 
+		UtilityManager::instance().infinity,
+		UtilityManager::instance().infinity);
+
+	point3 max(-UtilityManager::instance().infinity, // note re written from negitive infinity
+		-UtilityManager::instance().infinity,        // note re written from negitive infinity 
+		-UtilityManager::instance().infinity);       // note re written from negitive infinity 
 
 	for (int i = 0; i < 2; i++) 
 	{

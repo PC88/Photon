@@ -24,7 +24,7 @@ public:
 			return true;
 		}
 		double reflect_prob = schlick(cos_theta, etai_over_etat);
-		if (random_double() < reflect_prob)
+		if (UtilityManager::instance().random_double() < reflect_prob)
 		{
 			vec3 reflected = UtilityManager::instance().reflect(unit_direction, rec.normal);
 			scattered = ray(rec.p, reflected);
