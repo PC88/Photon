@@ -89,6 +89,7 @@
     <ClCompile Include="Demos\Demo.cpp" />
     <ClCompile Include="Demos\DemoManager.cpp" />
     <ClCompile Include="RT1W\rotate_y.cpp" />
+    <ClCompile Include="RT1W\sphere.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="RT1W\translate.cpp" />
     <ClCompile Include="Util\UtilityManager.cpp" />

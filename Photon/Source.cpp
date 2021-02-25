@@ -7,7 +7,6 @@
 
 #include "Demos/CPU_RT_Demo.h" // this has most of the includes
 
-#include "RT1W/sphere.h"
 
 // added
 #include "RT1W/translate.h"
