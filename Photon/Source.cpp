@@ -19,7 +19,6 @@
 #include "Demos/CPU_RT_Demo.h" // this has most of the includes
 
 #include "RT1W/colour.h" // this one is to be left till last, due to usings/globals
-#include "RT1W/moving_sphere.h"
 #include "RT1W/checker_texture.h"
 #include "RT1W/aarect.h"
 #include "RT1W/box.h"
