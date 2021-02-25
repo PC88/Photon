@@ -19,6 +19,8 @@
 #include "RT1W/texture.h"
 
 #include "RT1W/metal.h"
+#include "RT1W/lambertian.h"
+#include "RT1W/dielectric.h"
 
 
 class CPU_RT_Demo :

@@ -14,12 +14,11 @@
 // solid_color.h	-done
 // texture.h		-done
 // metal.h			-done
+// lambertian.h		-done
 
 #include "Demos/CPU_RT_Demo.h" // this has most of the includes
 
 #include "RT1W/colour.h" // this one is to be left till last, due to usings/globals
-#include "RT1W/lambertian.h"
-#include "RT1W/dielectric.h"
 #include "RT1W/moving_sphere.h"
 #include "RT1W/checker_texture.h"
 #include "RT1W/aarect.h"
@@ -27,7 +26,7 @@
 #include "RT1W/constant_medium.h"
 #include "RT1W/bvh.h"
 
-// demos 
+// demos
 #include "Demos/DemoManager.h"
 // spdlog
 #include "spdlog/spdlog.h"
