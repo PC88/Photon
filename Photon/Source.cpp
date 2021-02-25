@@ -12,10 +12,6 @@
 
 #include "Demos/CPU_RT_Demo.h" // this has most of the includes
 
-#include "RT1W/image_texture.h"
-#include "RT1W/noise_texture.h"
-#include "RT1W/solid_color.h"
-
 #include "RT1W/colour.h"
 #include "RT1W/metal.h"
 #include "RT1W/lambertian.h"

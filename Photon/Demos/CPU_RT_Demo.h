@@ -12,6 +12,12 @@
 #include "RT1W/hittable_list.h"
 #include "RT1W/camera.h"
 
+
+#include "RT1W/image_texture.h"
+#include "RT1W/noise_texture.h"
+#include "RT1W/solid_color.h"
+
+
 class CPU_RT_Demo :
     public Demo
 {
