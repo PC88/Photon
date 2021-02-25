@@ -4,14 +4,11 @@
 // vec3.h -done
 // ray.h -done
 // hittable.h - this is included somewhere down the list - todo:find where
+// sphere.h done
 
 #include "Demos/CPU_RT_Demo.h" // this has most of the includes
 
 
-// added
-#include "RT1W/translate.h"
-#include "RT1W/rotate_y.h"
-// added
 
 #include "RT1W/hittable_list.h"
 #include "RT1W/camera.h"
