@@ -63,6 +63,9 @@ public:
 	///////////////////////////// MOVED FROM AABB.H//
 	AABB surrounding_box(AABB box0, AABB box1);
 
+	///////////////////////////// MOVED FROM MATERIAL.H//
+	double schlick(double cosine, double ref_idx);
+
 
 private:
 	UtilityManager();

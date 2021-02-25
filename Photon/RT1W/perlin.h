@@ -1,4 +1,5 @@
 #pragma once
+#include "RT1W/vec3.h"
 
 // global for now
 inline double trilinear_interp(double c[2][2][2], double u, double v, double w)

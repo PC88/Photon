@@ -90,6 +90,7 @@
     <ClCompile Include="Demos\DemoManager.cpp" />
     <ClCompile Include="RT1W\camera.cpp" />
     <ClCompile Include="RT1W\hittable_list.cpp" />
+    <ClCompile Include="RT1W\metal.cpp" />
     <ClCompile Include="RT1W\rotate_y.cpp" />
     <ClCompile Include="RT1W\sphere.cpp" />
     <ClCompile Include="Source.cpp" />
