@@ -9,11 +9,15 @@
 // rotate_y.h		-done
 // hittable_list.h  -done
 // camera.h			-done
+// image_texture.h	-done
+// noise_texture.h	-done
+// solid_color.h	-done
+// texture.h		-done
+// metal.h			-done
 
 #include "Demos/CPU_RT_Demo.h" // this has most of the includes
 
-#include "RT1W/colour.h"
-#include "RT1W/metal.h"
+#include "RT1W/colour.h" // this one is to be left till last, due to usings/globals
 #include "RT1W/lambertian.h"
 #include "RT1W/dielectric.h"
 #include "RT1W/moving_sphere.h"
