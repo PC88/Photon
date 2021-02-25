@@ -15,6 +15,9 @@
 // texture.h		-done
 // metal.h			-done
 // lambertian.h		-done
+// dielectric.h		-done
+// moving_sphere.h	-done
+
 
 #include "Demos/CPU_RT_Demo.h" // this has most of the includes
 

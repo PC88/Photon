@@ -21,7 +21,6 @@
 #include "RT1W/metal.h"
 #include "RT1W/lambertian.h"
 #include "RT1W/dielectric.h"
-
 #include "RT1W/moving_sphere.h"
 
 
