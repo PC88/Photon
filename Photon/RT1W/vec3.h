@@ -2,7 +2,7 @@
 #include <cmath>
 #include <iostream>
 
-#include "Util\UtilityManager.h"
+#include "Util/UtilityManager.h"
 
 using std::sqrt;
 
@@ -135,6 +135,7 @@ inline vec3 unit_vector(vec3 v)
 {
 	return v / v.length();
 }
+
 
 // Type aliases for vec3
 using point3 = vec3;   // 3D point

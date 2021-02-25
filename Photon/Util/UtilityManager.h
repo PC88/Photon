@@ -13,6 +13,7 @@
 class vec3; // forward dec
 class AABB;
 
+
 class UtilityManager
 {
 public:
@@ -61,6 +62,7 @@ public:
 
 	///////////////////////////// MOVED FROM AABB.H//
 	AABB surrounding_box(AABB box0, AABB box1);
+
 
 private:
 	UtilityManager();
