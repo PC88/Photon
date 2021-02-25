@@ -88,6 +88,7 @@
     <ClCompile Include="Demos\CPU_RT_Demo.cpp" />
     <ClCompile Include="Demos\Demo.cpp" />
     <ClCompile Include="Demos\DemoManager.cpp" />
+    <ClCompile Include="RT1W\image_texture.cpp" />
     <ClCompile Include="RT1W\camera.cpp" />
     <ClCompile Include="RT1W\hittable_list.cpp" />
     <ClCompile Include="RT1W\metal.cpp" />
@@ -107,6 +108,7 @@
     <ClInclude Include="Demos\CPU_RT_Demo.h" />
     <ClInclude Include="Demos\Demo.h" />
     <ClInclude Include="Demos\DemoManager.h" />
+    <ClInclude Include="RT1W\image_texture.h" />
     <ClInclude Include="RT1W\rotate_y.h" />
     <ClInclude Include="RT1W\AABB.h" />
     <ClInclude Include="RT1W\aarect.h" />
