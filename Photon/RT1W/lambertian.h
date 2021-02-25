@@ -10,13 +10,7 @@ public:
 	lambertian(const color& a) : albedo(std::make_shared<solid_color>(a)) {}
 	lambertian(std::shared_ptr<texture> a) : albedo(a) {}
 
-	virtual bool scatter(const ray& r_in, const hit_record& rec, color& attenuation, ray& scattered) const override 
-	{
-		vec3 scatter_direction = rec.normal + UtilityManager::instance().random_unit_vector();
-		scattered = ray(rec.p, scatter_direction, r_in.time());
-		attenuation = albedo->value(rec.u, rec.v, rec.p);
-		return true;
-	}
+	virtual bool scatter(const ray& r_in, const hit_record& rec, color& attenuation, ray& scattered) const override;
 
 public:
 	std::shared_ptr<texture> albedo;

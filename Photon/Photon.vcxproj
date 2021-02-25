@@ -88,6 +88,7 @@
     <ClCompile Include="Demos\CPU_RT_Demo.cpp" />
     <ClCompile Include="Demos\Demo.cpp" />
     <ClCompile Include="Demos\DemoManager.cpp" />
+    <ClCompile Include="RT1W\lambertian.cpp" />
     <ClCompile Include="RT1W\noise_texture.cpp" />
     <ClCompile Include="RT1W\image_texture.cpp" />
     <ClCompile Include="RT1W\camera.cpp" />
