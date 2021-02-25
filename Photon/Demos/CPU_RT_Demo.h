@@ -10,6 +10,7 @@
 #include "RT1W/rotate_y.h"
 // added
 #include "RT1W/hittable_list.h"
+#include "RT1W/camera.h"
 
 class CPU_RT_Demo :
     public Demo

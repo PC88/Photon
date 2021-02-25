@@ -8,10 +8,10 @@
 // translate.h		-done
 // rotate_y.h		-done
 // hittable_list.h  -done
+// camera.h			-done
 
 #include "Demos/CPU_RT_Demo.h" // this has most of the includes
 
-#include "RT1W/camera.h"
 #include "RT1W/colour.h"
 #include "RT1W/metal.h"
 #include "RT1W/lambertian.h"
