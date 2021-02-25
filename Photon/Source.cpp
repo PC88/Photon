@@ -1,16 +1,16 @@
 
 #include <iostream>
 
-// vec3.h -done
-// ray.h -done
-// hittable.h - this is included somewhere down the list - todo:find where
-// sphere.h done
+// vec3.h			-done
+// ray.h			-done
+// hittable.h		-done
+// sphere.h			-done
+// translate.h		-done
+// rotate_y.h		-done
+// hittable_list.h  -done
 
 #include "Demos/CPU_RT_Demo.h" // this has most of the includes
 
-
-
-#include "RT1W/hittable_list.h"
 #include "RT1W/camera.h"
 #include "RT1W/colour.h"
 #include "RT1W/metal.h"
@@ -219,12 +219,12 @@ hittable_list cornell_box()
 	objects.add(std::make_shared<xy_rect>(0, 555, 0, 555, 555, white));
 
 	// boxes
-	shared_ptr<hittable> box1 = std::make_shared<box>(point3(0, 0, 0), point3(165, 330, 165), white);
+	std::shared_ptr<hittable> box1 = std::make_shared<box>(point3(0, 0, 0), point3(165, 330, 165), white);
 	box1 = std::make_shared<rotate_y>(box1, 15);
 	box1 = std::make_shared<translate>(box1, vec3(265, 0, 295));
 	objects.add(box1);
 
-	shared_ptr<hittable> box2 = std::make_shared<box>(point3(0, 0, 0), point3(165, 165, 165), white);
+	std::shared_ptr<hittable> box2 = std::make_shared<box>(point3(0, 0, 0), point3(165, 165, 165), white);
 	box2 = std::make_shared<rotate_y>(box2, -18);
 	box2 = std::make_shared<translate>(box2, vec3(130, 0, 65));
 	objects.add(box2);
@@ -248,11 +248,11 @@ hittable_list cornell_smoke()
 	objects.add(std::make_shared<xz_rect>(0, 555, 0, 555, 0, white));
 	objects.add(std::make_shared<xy_rect>(0, 555, 0, 555, 555, white));
 
-	shared_ptr<hittable> box1 = std::make_shared<box>(point3(0, 0, 0), point3(165, 330, 165), white);
+	std::shared_ptr<hittable> box1 = std::make_shared<box>(point3(0, 0, 0), point3(165, 330, 165), white);
 	box1 = std::make_shared<rotate_y>(box1, 15);
 	box1 = std::make_shared<translate>(box1, vec3(265, 0, 295));
 
-	shared_ptr<hittable> box2 = std::make_shared<box>(point3(0, 0, 0), point3(165, 165, 165), white);
+	std::shared_ptr<hittable> box2 = std::make_shared<box>(point3(0, 0, 0), point3(165, 165, 165), white);
 	box2 = std::make_shared<rotate_y>(box2, -18);
 	box2 = std::make_shared<translate>(box2, vec3(130, 0, 65));
 

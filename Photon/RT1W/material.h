@@ -23,8 +23,8 @@ double schlick(double cosine, double ref_idx)
 class diffuse_light : public material 
 {
 public:
-	diffuse_light(shared_ptr<texture> a) : emit(a) {}
-	diffuse_light(color c) : emit(make_shared<solid_color>(c)) {}
+	diffuse_light(std::shared_ptr<texture> a) : emit(a) {}
+	diffuse_light(color c) : emit(std::make_shared<solid_color>(c)) {}
 
 	virtual bool scatter(
 		const ray& r_in, const hit_record& rec, color& attenuation, ray& scattered
@@ -39,14 +39,14 @@ public:
 	}
 
 public:
-	shared_ptr<texture> emit;
+	std::shared_ptr<texture> emit;
 };
 
 class isotropic : public material 
 {
 public:
-	isotropic(color c) : albedo(make_shared<solid_color>(c)) {}
-	isotropic(shared_ptr<texture> a) : albedo(a) {}
+	isotropic(color c) : albedo(std::make_shared<solid_color>(c)) {}
+	isotropic(std::shared_ptr<texture> a) : albedo(a) {}
 
 	virtual bool scatter(
 		const ray& r_in, const hit_record& rec, color& attenuation, ray& scattered
@@ -58,5 +58,5 @@ public:
 	}
 
 public:
-	shared_ptr<texture> albedo;
+	std::shared_ptr<texture> albedo;
 };

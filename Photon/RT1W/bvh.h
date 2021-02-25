@@ -70,7 +70,7 @@ bool bvh_node::hit(const ray& r, double t_min, double t_max, hit_record& rec) co
 	return hit_left || hit_right;
 }
 
-bvh_node::bvh_node(std::vector<shared_ptr<hittable>>& objects,
+bvh_node::bvh_node(std::vector<std::shared_ptr<hittable>>& objects,
 	size_t start, size_t end, double time0, double time1)
 {
 	int axis = UtilityManager::instance().random_int(0, 2);
@@ -107,8 +107,8 @@ bvh_node::bvh_node(std::vector<shared_ptr<hittable>>& objects,
 		std::sort(objects.begin() + start, objects.begin() + end, comparator);
 
 		auto mid = start + object_span / 2;
-		left = make_shared<bvh_node>(objects, start, mid, time0, time1);
-		right = make_shared<bvh_node>(objects, mid, end, time0, time1);
+		left = std::make_shared<bvh_node>(objects, start, mid, time0, time1);
+		right = std::make_shared<bvh_node>(objects, mid, end, time0, time1);
 	}
 
 	AABB box_left, box_right;
