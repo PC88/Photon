@@ -95,6 +95,7 @@
     <ClCompile Include="RT1W\metal.cpp" />
     <ClCompile Include="RT1W\rotate_y.cpp" />
     <ClCompile Include="RT1W\sphere.cpp" />
+    <ClCompile Include="RT1W\solid_color.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="RT1W\translate.cpp" />
     <ClCompile Include="Util\UtilityManager.cpp" />
@@ -134,6 +135,7 @@
     <ClInclude Include="RT1W\texture.h" />
     <ClInclude Include="RT1W\vec3.h" />
     <ClInclude Include="RT1W\translate.h" />
+    <ClInclude Include="RT1W\solid_color.h" />
     <ClInclude Include="Util\UtilityManager.h" />
     <ClInclude Include="Vendor\imgui\imconfig.h" />
     <ClInclude Include="Vendor\imgui\imgui.h" />
