@@ -18,12 +18,12 @@
 // dielectric.h		 -done
 // moving_sphere.h	 -done
 // checker_texture.h -done
+// aarect.h			 -done
 
 
 #include "Demos/CPU_RT_Demo.h" // this has most of the includes
 
 #include "RT1W/colour.h" // this one is to be left till last, due to usings/globals
-#include "RT1W/aarect.h"
 #include "RT1W/box.h"
 #include "RT1W/constant_medium.h"
 #include "RT1W/bvh.h"

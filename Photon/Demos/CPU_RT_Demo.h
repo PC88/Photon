@@ -24,6 +24,7 @@
 #include "RT1W/moving_sphere.h"
 
 #include "RT1W/checker_texture.h"
+#include "RT1W/aarect.h"
 
 
 class CPU_RT_Demo :
