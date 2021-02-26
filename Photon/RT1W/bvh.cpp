@@ -21,11 +21,11 @@ bvh_node::bvh_node(std::vector<std::shared_ptr<hittable>>& objects,
 	size_t start, size_t end, double time0, double time1)
 {
 	int axis = UtilityManager::instance().random_int(0, 2);
-	/*auto comparator = (axis == 0) ? box_x_compare
-		: (axis == 1) ? box_y_compare
-		: box_z_compare;*/
 
-		// TODO resolve this
+	// comparator, this is a function of. 
+	// std compare https://en.cppreference.com/w/cpp/named_req/Compare
+	// function pointer type being utilized to confer the expression at the end.
+
 	auto comparator = (axis == 0) ? box_x_compare
 		: (axis == 1) ? box_y_compare
 		: box_z_compare;
@@ -63,7 +63,9 @@ bvh_node::bvh_node(std::vector<std::shared_ptr<hittable>>& objects,
 	if (!left->bounding_box(time0, time1, box_left)
 		|| !right->bounding_box(time0, time1, box_right)
 		)
+	{
 		std::cerr << "No bounding box in bvh_node constructor.\n";
+	}
 
 	box = UtilityManager::instance().surrounding_box(box_left, box_right);
 }
