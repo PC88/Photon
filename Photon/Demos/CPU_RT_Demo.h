@@ -18,9 +18,9 @@
 #include "RT1W\textures\solid_color.h"
 #include "RT1W\textures\texture.h"
 
-#include "RT1W/metal.h"
-#include "RT1W/lambertian.h"
-#include "RT1W/dielectric.h"
+#include "RT1W\materials\metal.h"
+#include "RT1W\materials\lambertian.h"
+#include "RT1W\materials\dielectric.h"
 #include "RT1W\hittables\moving_sphere.h"
 
 #include "RT1W\textures\checker_texture.h"

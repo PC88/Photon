@@ -1,5 +1,5 @@
 #pragma once
-#include "RT1W\material.h"
+#include "RT1W\materials\material.h"
 
 class dielectric :
 	public material

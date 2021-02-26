@@ -1,4 +1,4 @@
-#include "RT1W/dielectric.h"
+#include "RT1W\materials\dielectric.h"
 
 bool dielectric::scatter(const ray& r_in, const hit_record& rec, color& attenuation, ray& scattered) const
 {

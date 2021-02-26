@@ -1,4 +1,4 @@
-#include "RT1W/metal.h"
+#include "RT1W\materials\metal.h"
 #include "RT1W\hittables\hittable.h"
 
 bool metal::scatter(const ray& r_in, const hit_record& rec, color& attenuation, ray& scattered) const

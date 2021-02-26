@@ -1,4 +1,4 @@
-#include "RT1W/lambertian.h"
+#include "RT1W\materials\lambertian.h"
 
 bool lambertian::scatter(const ray& r_in, const hit_record& rec, color& attenuation, ray& scattered) const
 {
