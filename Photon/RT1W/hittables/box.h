@@ -1,8 +1,8 @@
 #pragma once
 
 
-#include "aarect.h"
-#include "hittable_list.h"
+#include "RT1W\hittables\aarect.h"
+#include "RT1W\hittables\hittable_list.h"
 
 class box : public hittable 
 {

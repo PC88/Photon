@@ -1,7 +1,7 @@
 #include "UtilityManager.h"
 #include "RT1W/vec3.h"
 #include "RT1W/AABB.h"
-#include "RT1W/hittable.h"
+#include "RT1W\hittables\hittable.h"
 
 // base includes from RT1W utils
 #include <cmath>

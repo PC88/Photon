@@ -1,8 +1,8 @@
 #pragma once
 
-#include "hittable.h"
-#include "material.h"
-#include "texture.h"
+#include "RT1W\hittables\hittable.h"
+#include "RT1W\material.h"
+#include "RT1W\texture.h"
 
 class constant_medium : public hittable 
 {

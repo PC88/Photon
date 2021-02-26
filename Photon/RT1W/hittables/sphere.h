@@ -1,8 +1,8 @@
 #pragma once
 
 
-#include "hittable.h"
-#include "vec3.h"
+#include "RT1W\hittables\hittable.h"
+#include "RT1W\vec3.h"
 
 class hittable;
 

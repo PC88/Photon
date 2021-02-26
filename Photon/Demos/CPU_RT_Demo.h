@@ -3,13 +3,13 @@
 
 #include "RT1W/vec3.h"
 #include "RT1W/ray.h"
-#include "RT1W/hittable.h"
-#include "RT1W/sphere.h"
+#include "RT1W\hittables\hittable.h"
+#include "RT1W\hittables\sphere.h"
 // added
-#include "RT1W/translate.h"
-#include "RT1W/rotate_y.h"
+#include "RT1W\hittables\translate.h"
+#include "RT1W\hittables\rotate_y.h"
 // added
-#include "RT1W/hittable_list.h"
+#include "RT1W\hittables\hittable_list.h"
 #include "RT1W/camera.h"
 
 
@@ -21,13 +21,13 @@
 #include "RT1W/metal.h"
 #include "RT1W/lambertian.h"
 #include "RT1W/dielectric.h"
-#include "RT1W/moving_sphere.h"
+#include "RT1W\hittables\moving_sphere.h"
 
 #include "RT1W/checker_texture.h"
-#include "RT1W/aarect.h"
-#include "RT1W/box.h"
-#include "RT1W/constant_medium.h"
-#include "RT1W/bvh.h"
+#include "RT1W\hittables\aarect.h"
+#include "RT1W\hittables\box.h"
+#include "RT1W\hittables\constant_medium.h"
+#include "RT1W\hittables\bvh.h"
 
 
 class CPU_RT_Demo :

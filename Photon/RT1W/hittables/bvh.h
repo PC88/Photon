@@ -1,6 +1,6 @@
 #pragma once
 #include <algorithm>
-#include "RT1W/hittable_list.h"
+#include "RT1W\hittables\hittable_list.h"
 
 class bvh_node : public hittable 
 {

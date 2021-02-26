@@ -1,5 +1,5 @@
 #pragma once
-#include "RT1W\hittable.h"
+#include "RT1W\hittables\hittable.h"
 
 class rotate_y : public hittable 
 {

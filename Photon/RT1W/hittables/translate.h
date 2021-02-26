@@ -1,6 +1,6 @@
 #pragma once
 #include "Util\UtilityManager.h"
-#include "RT1W\hittable.h"
+#include "RT1W\hittables\hittable.h"
 
 class translate : public hittable
 {

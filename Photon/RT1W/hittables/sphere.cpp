@@ -1,4 +1,4 @@
-#include "RT1W/sphere.h"
+#include "RT1W\hittables\sphere.h"
 
 
 bool sphere::hit(const ray& r, double t_min, double t_max, hit_record& rec) const

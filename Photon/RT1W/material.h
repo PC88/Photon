@@ -1,7 +1,7 @@
 #pragma once
 #include "RT1W/texture.h"
 #include "RT1W/ray.h"
-#include "hittable.h"
+#include "RT1W\hittables\hittable.h"
 #include "RT1W/solid_color.h"
 
 class material

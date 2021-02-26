@@ -1,4 +1,4 @@
-#include "RT1W\rotate_y.h"
+#include "RT1W\hittables\rotate_y.h"
 
 rotate_y::rotate_y(std::shared_ptr<hittable> p, double angle)
 	: ptr(p)

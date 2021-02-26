@@ -73,7 +73,7 @@ private:
 };
 
 
-///////////////////////////// MOVED FROM BVH.H//
+///////////////////////////// MOVED FROM BVH.H// - global still for now, should be reworked later.
 inline bool box_compare(const std::shared_ptr<hittable> a, const std::shared_ptr<hittable> b, int axis);
 
 bool box_x_compare(const std::shared_ptr<hittable> a, const std::shared_ptr<hittable> b);

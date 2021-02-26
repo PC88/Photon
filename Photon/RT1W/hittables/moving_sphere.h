@@ -1,5 +1,5 @@
 #pragma once
-#include "hittable.h"
+#include "RT1W\hittables\hittable.h"
 
 class moving_sphere :
 	public hittable

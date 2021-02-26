@@ -1,4 +1,4 @@
-#include "RT1W\translate.h"
+#include "RT1W\hittables\translate.h"
 
 bool translate::hit(const ray& r, double t_min, double t_max, hit_record& rec) const
 {

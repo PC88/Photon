@@ -1,4 +1,4 @@
-#include "RT1W/bvh.h"
+#include "RT1W\hittables\bvh.h"
 
 bool bvh_node::bounding_box(double t0, double t1, AABB& output_box) const
 {
