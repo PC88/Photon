@@ -1,4 +1,4 @@
-#include "RT1W/checker_texture.h"
+#include "RT1W\textures\checker_texture.h"
 
 color checker_texture::value(double u, double v, const point3& p) const
 {

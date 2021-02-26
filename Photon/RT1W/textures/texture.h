@@ -1,6 +1,5 @@
 #pragma once
-
-#include "RT1W\perlin.h"
+#include "RT1W/vec3.h"
 
 class texture 
 {

@@ -1,6 +1,6 @@
 #pragma once
 #include "RT1W\vec3.h"
-#include "RT1W\solid_color.h"
+#include "RT1W\textures\solid_color.h"
 
 class checker_texture :
 	public texture

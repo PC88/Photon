@@ -1,4 +1,4 @@
-#include "noise_texture.h"
+#include "RT1W\textures\noise_texture.h"
 
 color noise_texture::value(double u, double v, const point3& p) const
 {

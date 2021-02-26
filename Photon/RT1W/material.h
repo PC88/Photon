@@ -1,8 +1,8 @@
 #pragma once
-#include "RT1W/texture.h"
+#include "RT1W\textures\texture.h"
 #include "RT1W/ray.h"
 #include "RT1W\hittables\hittable.h"
-#include "RT1W/solid_color.h"
+#include "RT1W\textures\solid_color.h"
 
 class material
 {

@@ -1,6 +1,6 @@
 #pragma once
 #include "RT1W/material.h"
-#include "RT1W/texture.h"
+#include "RT1W\textures\texture.h"
 
 struct hit_record;
 

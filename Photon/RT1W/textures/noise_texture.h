@@ -1,5 +1,6 @@
 #pragma once
-#include "texture.h"
+#include "RT1W\textures\texture.h"
+#include "RT1W\perlin.h"
 
 class noise_texture : public texture
 {

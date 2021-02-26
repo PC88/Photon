@@ -1,4 +1,4 @@
-#include "image_texture.h"
+#include "RT1W\textures\image_texture.h"
 #include "RT1W\rtw_stb_image.h"
 
 image_texture::image_texture(const char* filename)

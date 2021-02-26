@@ -13,17 +13,17 @@
 #include "RT1W/camera.h"
 
 
-#include "RT1W/image_texture.h"
-#include "RT1W/noise_texture.h"
-#include "RT1W/solid_color.h"
-#include "RT1W/texture.h"
+#include "RT1W\textures\image_texture.h"
+#include "RT1W\textures\noise_texture.h"
+#include "RT1W\textures\solid_color.h"
+#include "RT1W\textures\texture.h"
 
 #include "RT1W/metal.h"
 #include "RT1W/lambertian.h"
 #include "RT1W/dielectric.h"
 #include "RT1W\hittables\moving_sphere.h"
 
-#include "RT1W/checker_texture.h"
+#include "RT1W\textures\checker_texture.h"
 #include "RT1W\hittables\aarect.h"
 #include "RT1W\hittables\box.h"
 #include "RT1W\hittables\constant_medium.h"
