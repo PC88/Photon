@@ -27,6 +27,7 @@
 #include "RT1W/aarect.h"
 #include "RT1W/box.h"
 #include "RT1W/constant_medium.h"
+#include "RT1W/bvh.h"
 
 
 class CPU_RT_Demo :

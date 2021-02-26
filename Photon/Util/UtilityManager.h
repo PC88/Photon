@@ -12,7 +12,7 @@
 
 class vec3; // forward dec
 class AABB;
-
+class hittable;
 
 class UtilityManager
 {
@@ -72,3 +72,12 @@ private:
 	virtual ~UtilityManager();
 };
 
+
+///////////////////////////// MOVED FROM BVH.H//
+inline bool box_compare(const std::shared_ptr<hittable> a, const std::shared_ptr<hittable> b, int axis);
+
+bool box_x_compare(const std::shared_ptr<hittable> a, const std::shared_ptr<hittable> b);
+
+bool box_y_compare(const std::shared_ptr<hittable> a, const std::shared_ptr<hittable> b);
+
+bool box_z_compare(const std::shared_ptr<hittable> a, const std::shared_ptr<hittable> b);
