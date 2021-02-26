@@ -23,6 +23,8 @@
 #include "RT1W/dielectric.h"
 #include "RT1W/moving_sphere.h"
 
+#include "RT1W/checker_texture.h"
+
 
 class CPU_RT_Demo :
     public Demo

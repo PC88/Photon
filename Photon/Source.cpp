@@ -1,28 +1,28 @@
 
 #include <iostream>
 
-// vec3.h			-done
-// ray.h			-done
-// hittable.h		-done
-// sphere.h			-done
-// translate.h		-done
-// rotate_y.h		-done
-// hittable_list.h  -done
-// camera.h			-done
-// image_texture.h	-done
-// noise_texture.h	-done
-// solid_color.h	-done
-// texture.h		-done
-// metal.h			-done
-// lambertian.h		-done
-// dielectric.h		-done
-// moving_sphere.h	-done
+// vec3.h			 -done
+// ray.h			 -done
+// hittable.h		 -done
+// sphere.h			 -done
+// translate.h		 -done
+// rotate_y.h		 -done
+// hittable_list.h   -done
+// camera.h			 -done
+// image_texture.h	 -done
+// noise_texture.h	 -done
+// solid_color.h	 -done
+// texture.h		 -done
+// metal.h			 -done
+// lambertian.h		 -done
+// dielectric.h		 -done
+// moving_sphere.h	 -done
+// checker_texture.h -done
 
 
 #include "Demos/CPU_RT_Demo.h" // this has most of the includes
 
 #include "RT1W/colour.h" // this one is to be left till last, due to usings/globals
-#include "RT1W/checker_texture.h"
 #include "RT1W/aarect.h"
 #include "RT1W/box.h"
 #include "RT1W/constant_medium.h"

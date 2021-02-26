@@ -1,4 +1,5 @@
 #pragma once
+#include "RT1W/vec3.h"
 
 #include <cmath>
 #include <cstdlib>
