@@ -90,6 +90,7 @@
     <ClCompile Include="Demos\DemoManager.cpp" />
     <ClCompile Include="RT1W\aarect.cpp" />
     <ClCompile Include="RT1W\box.cpp" />
+    <ClCompile Include="RT1W\bvh.cpp" />
     <ClCompile Include="RT1W\checker_texture.cpp" />
     <ClCompile Include="RT1W\constant_medium.cpp" />
     <ClCompile Include="RT1W\dielectric.cpp" />
