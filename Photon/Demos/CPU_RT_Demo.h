@@ -25,6 +25,8 @@
 
 #include "RT1W/checker_texture.h"
 #include "RT1W/aarect.h"
+#include "RT1W/box.h"
+#include "RT1W/constant_medium.h"
 
 
 class CPU_RT_Demo :
