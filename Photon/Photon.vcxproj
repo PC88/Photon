@@ -88,6 +88,7 @@
     <ClCompile Include="Demos\CPU_RT_Demo.cpp" />
     <ClCompile Include="Demos\Demo.cpp" />
     <ClCompile Include="Demos\DemoManager.cpp" />
+    <ClCompile Include="Demos\Imgui_DX_12_Demo.cpp" />
     <ClCompile Include="RT1W\hittables\aarect.cpp" />
     <ClCompile Include="RT1W\hittables\box.cpp" />
     <ClCompile Include="RT1W\hittables\bvh.cpp" />
@@ -118,6 +119,7 @@
     <ClInclude Include="Demos\CPU_RT_Demo.h" />
     <ClInclude Include="Demos\Demo.h" />
     <ClInclude Include="Demos\DemoManager.h" />
+    <ClInclude Include="Demos\Imgui_DX_12_Demo.h" />
     <ClInclude Include="RT1W\textures\noise_texture.h" />
     <ClInclude Include="RT1W\textures\image_texture.h" />
     <ClInclude Include="RT1W\hittables\rotate_y.h" />
