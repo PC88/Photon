@@ -7,7 +7,8 @@
 #include <memory>
 
 // global for now - might be changed later its simply for speed
-void write_color(std::ostream &out, color pixel_color, int samples_per_pixel)
+// static as linkage issues would arise
+static void write_color(std::ostream &out, color pixel_color, int samples_per_pixel)
 {
 	auto r = pixel_color.x();
 	auto g = pixel_color.y();

@@ -1,8 +1,8 @@
 #pragma once
 #include "Demo.h"
 
-#include "RT1W/vec3.h"
-#include "RT1W/ray.h"
+#include "RT1W\vec3.h"
+#include "RT1W\ray.h"
 #include "RT1W\hittables\hittable.h"
 #include "RT1W\hittables\sphere.h"
 // added
@@ -33,7 +33,27 @@
 class CPU_RT_Demo :
     public Demo
 {
+	CPU_RT_Demo();
+	virtual ~CPU_RT_Demo();
 
+	// Optional inherited functions
+	virtual void Update(double interval) override;
+	virtual void ImGuiRender() override;
+	virtual void Render() override;
 
+    double hit_sphere(const point3& center, double radius, const ray& r);
+
+    // depth is added here to stop the recursions from blowing the stack
+    color ray_color(const ray& r, const color& background, const hittable& world, int depth);
+
+    // cover image function
+    hittable_list random_scene();
+    hittable_list two_spheres();
+    hittable_list two_perlin_spheres();
+    hittable_list earth();
+    hittable_list simple_light();
+    hittable_list cornell_box();
+    hittable_list cornell_smoke();
+    hittable_list final_scene();
 };
 
