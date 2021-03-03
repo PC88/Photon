@@ -33,6 +33,7 @@
 class CPU_RT_Demo :
     public Demo
 {
+public:
 	CPU_RT_Demo();
 	virtual ~CPU_RT_Demo();
 
