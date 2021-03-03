@@ -124,6 +124,7 @@
     <ClInclude Include="Demos\Demo.h" />
     <ClInclude Include="Demos\DemoManager.h" />
     <ClInclude Include="Demos\Imgui_DX_12_Demo.h" />
+    <ClInclude Include="ppm\ppm.hpp" />
     <ClInclude Include="RT1W\textures\noise_texture.h" />
     <ClInclude Include="RT1W\textures\image_texture.h" />
     <ClInclude Include="RT1W\hittables\rotate_y.h" />
