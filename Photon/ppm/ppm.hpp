@@ -16,7 +16,8 @@
 
 inline std::string get_file_contents(const char *);
 
-struct ppm {
+struct ppm 
+{
 
   void read(const char *filename, std::vector<unsigned char> &data)
   {
