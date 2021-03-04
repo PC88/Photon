@@ -53,7 +53,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>spdlogd.lib;cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>spdlogd.lib;cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;d3d12.lib;dxgi.lib;d3dcompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)Photon\Vendor\spdlog\lib\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <CudaCompile>
@@ -74,7 +74,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>spdlog.lib;cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>spdlog.lib;cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;d3d12.lib;d3dcompiler.lib;dxgi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)Photon\Vendor\spdlog\lib\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <CudaCompile>
@@ -88,6 +88,7 @@
     <ClCompile Include="Demos\CPU_RT_Demo.cpp" />
     <ClCompile Include="Demos\Demo.cpp" />
     <ClCompile Include="Demos\DemoManager.cpp" />
+    <ClCompile Include="Demos\Imgui_DX_12_Demo.cpp" />
     <ClCompile Include="RT1W\hittables\aarect.cpp" />
     <ClCompile Include="RT1W\hittables\box.cpp" />
     <ClCompile Include="RT1W\hittables\bvh.cpp" />
@@ -106,11 +107,15 @@
     <ClCompile Include="RT1W\textures\solid_color.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="RT1W\hittables\translate.cpp" />
+    <ClCompile Include="Timer\HPTimer.cpp" />
+    <ClCompile Include="Timer\LPTimer.cpp" />
+    <ClCompile Include="Timer\Timer.cpp" />
     <ClCompile Include="Util\UtilityManager.cpp" />
     <ClCompile Include="Vendor\imgui\imgui.cpp" />
     <ClCompile Include="Vendor\imgui\imgui_demo.cpp" />
     <ClCompile Include="Vendor\imgui\imgui_draw.cpp" />
     <ClCompile Include="Vendor\imgui\imgui_impl_dx12.cpp" />
+    <ClCompile Include="Vendor\imgui\imgui_impl_win32.cpp" />
     <ClCompile Include="Vendor\imgui\imgui_tables.cpp" />
     <ClCompile Include="Vendor\imgui\imgui_widgets.cpp" />
   </ItemGroup>
@@ -118,6 +123,8 @@
     <ClInclude Include="Demos\CPU_RT_Demo.h" />
     <ClInclude Include="Demos\Demo.h" />
     <ClInclude Include="Demos\DemoManager.h" />
+    <ClInclude Include="Demos\Imgui_DX_12_Demo.h" />
+    <ClInclude Include="ppm\ppm.hpp" />
     <ClInclude Include="RT1W\textures\noise_texture.h" />
     <ClInclude Include="RT1W\textures\image_texture.h" />
     <ClInclude Include="RT1W\hittables\rotate_y.h" />
@@ -144,10 +151,14 @@
     <ClInclude Include="RT1W\vec3.h" />
     <ClInclude Include="RT1W\hittables\translate.h" />
     <ClInclude Include="RT1W\textures\solid_color.h" />
+    <ClInclude Include="Timer\HPTimer.h" />
+    <ClInclude Include="Timer\LPTimer.h" />
+    <ClInclude Include="Timer\Timer.h" />
     <ClInclude Include="Util\UtilityManager.h" />
     <ClInclude Include="Vendor\imgui\imconfig.h" />
     <ClInclude Include="Vendor\imgui\imgui.h" />
     <ClInclude Include="Vendor\imgui\imgui_impl_dx12.h" />
+    <ClInclude Include="Vendor\imgui\imgui_impl_win32.h" />
     <ClInclude Include="Vendor\imgui\imgui_internal.h" />
     <ClInclude Include="Vendor\imgui\imstb_rectpack.h" />
     <ClInclude Include="Vendor\imgui\imstb_textedit.h" />
