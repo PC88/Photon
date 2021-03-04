@@ -97,6 +97,12 @@ CPU_RT_Demo::CPU_RT_Demo()
 
 	camera cam(lookfrom, lookat, vup, vfov, aspect_ratio, aperture, dist_to_focus, 0.0, 1.0);
 
+	ppm img;
+	img.w = image_width;
+	img.h = image_height;
+	img.capacity = img.w * img.h * img.nchannels + 200;
+	std::vector<unsigned char> outputData;
+	outputData.resize(img.w * img.h * img.nchannels);
 	// Render
 	std::cout << "P3\n" << image_width << ' ' << image_height << "\n255\n";
 
@@ -113,9 +119,12 @@ CPU_RT_Demo::CPU_RT_Demo()
 				ray r = cam.get_ray(u, v);
 				pixel_color += ray_color(r, background, world, max_depth);
 			}
-			write_color(std::cout, pixel_color, samples_per_pixel);
+			//write_color(std::cout, pixel_color, samples_per_pixel);
+			write_color_ppm(pixel_color, samples_per_pixel, outputData, img);
 		}
 	}
+
+	img.write("test.ppm", outputData);
 
 	std::cerr << "\nDone.\n";
 }
