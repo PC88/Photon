@@ -1,5 +1,6 @@
 ﻿#include "GPU_RT_Demo.h"
 #include "RT1W/colour.h" // output function
+#include <curand_kernel.h> // cuRAND
 
 GPU_RT_Demo::GPU_RT_Demo()
 {
