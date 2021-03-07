@@ -23,7 +23,10 @@
 
 #include <iostream>
 #include "Timer/LPTimer.h"
+
+// Demo includes
 #include "Demos/CPU_RT_Demo.h" // this has most of the includes
+#include "Demos/GPU_RT_Demo.h" // include added
 #include "Demos/Imgui_DX_12_Demo.h"
 
 // demos
@@ -142,6 +145,7 @@ int main(int, char**)
 	currentDemo = demoManager;
 
 	demoManager->RegisterDemo<CPU_RT_Demo>("CPU RT Demo");
+	demoManager->RegisterDemo<GPU_RT_Demo>("GPU RT Demo");
 	demoManager->RegisterDemo<Imgui_DX_12_Demo>("Imgui dx12 Demo");
 
 	// Main loop
