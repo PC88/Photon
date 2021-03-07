@@ -7,6 +7,8 @@ The initial port is from Peter Shirleys RT1W serise: https://raytracing.github.i
 
 and the specific branch of creation is: https://github.com/PC88/CPU_RT/tree/Photon_start_branch
 
+Inital acceleration aspects learned from Roger Allen's blog:  https://github.com/rogerallen/raytracinginoneweekendincuda
+
 Initial renders of this branch are detailed below, 10 samples per pixel and 10000 samples per pixel for comparison.
 
 ![CPU starting render 10 samples per pixel](Photon/Images/10_samples_pp.ppm)
