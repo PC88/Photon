@@ -2,7 +2,7 @@
 #include "RT1W\textures\texture.h"
 #include "RT1W\perlin.h"
 
-class noise_texture : public texture
+class noise_texture : public base_texture
 {
 public:
 	noise_texture() {}

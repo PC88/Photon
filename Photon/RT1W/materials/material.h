@@ -20,7 +20,7 @@ public:
 class diffuse_light : public material 
 {
 public:
-	diffuse_light(std::shared_ptr<texture> a) : emit(a) {}
+	diffuse_light(std::shared_ptr<base_texture> a) : emit(a) {}
 	diffuse_light(color c) : emit(std::make_shared<solid_color>(c)) {}
 
 	virtual bool scatter(
@@ -36,14 +36,14 @@ public:
 	}
 
 public:
-	std::shared_ptr<texture> emit;
+	std::shared_ptr<base_texture> emit;
 };
 
 class isotropic : public material 
 {
 public:
 	isotropic(color c) : albedo(std::make_shared<solid_color>(c)) {}
-	isotropic(std::shared_ptr<texture> a) : albedo(a) {}
+	isotropic(std::shared_ptr<base_texture> a) : albedo(a) {}
 
 	virtual bool scatter(
 		const ray& r_in, const hit_record& rec, color& attenuation, ray& scattered
@@ -55,5 +55,5 @@ public:
 	}
 
 public:
-	std::shared_ptr<texture> albedo;
+	std::shared_ptr<base_texture> albedo;
 };

@@ -82,9 +82,6 @@
     </CudaCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CudaCompile Include="kernel.cu" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="Demos\CPU_RT_Demo.cpp" />
     <ClCompile Include="Demos\Demo.cpp" />
     <ClCompile Include="Demos\DemoManager.cpp" />
@@ -105,8 +102,8 @@
     <ClCompile Include="RT1W\hittables\rotate_y.cpp" />
     <ClCompile Include="RT1W\hittables\sphere.cpp" />
     <ClCompile Include="RT1W\textures\solid_color.cpp" />
-    <ClCompile Include="Source.cpp" />
     <ClCompile Include="RT1W\hittables\translate.cpp" />
+    <ClCompile Include="Source.cpp" />
     <ClCompile Include="Timer\HPTimer.cpp" />
     <ClCompile Include="Timer\LPTimer.cpp" />
     <ClCompile Include="Timer\Timer.cpp" />
@@ -123,6 +120,7 @@
     <ClInclude Include="Demos\CPU_RT_Demo.h" />
     <ClInclude Include="Demos\Demo.h" />
     <ClInclude Include="Demos\DemoManager.h" />
+    <ClInclude Include="Demos\GPU_RT_Demo.h" />
     <ClInclude Include="Demos\Imgui_DX_12_Demo.h" />
     <ClInclude Include="ppm\ppm.hpp" />
     <ClInclude Include="RT1W\textures\noise_texture.h" />
@@ -163,6 +161,9 @@
     <ClInclude Include="Vendor\imgui\imstb_rectpack.h" />
     <ClInclude Include="Vendor\imgui\imstb_textedit.h" />
     <ClInclude Include="Vendor\imgui\imstb_truetype.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="Demos\GPU_RT_Demo.cu" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

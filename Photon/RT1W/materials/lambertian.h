@@ -8,11 +8,11 @@ class lambertian : public material
 {
 public:
 	lambertian(const color& a) : albedo(std::make_shared<solid_color>(a)) {}
-	lambertian(std::shared_ptr<texture> a) : albedo(a) {}
+	lambertian(std::shared_ptr<base_texture> a) : albedo(a) {}
 
 	virtual bool scatter(const ray& r_in, const hit_record& rec, color& attenuation, ray& scattered) const override;
 
 public:
-	std::shared_ptr<texture> albedo;
+	std::shared_ptr<base_texture> albedo;
 };
 

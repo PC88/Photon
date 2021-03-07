@@ -2,7 +2,7 @@
 #include "RT1W\textures\texture.h"
 
 
-class image_texture : public texture 
+class image_texture : public base_texture
 {
 public:
 	const static int bytes_per_pixel = 3;

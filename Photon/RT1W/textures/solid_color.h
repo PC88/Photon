@@ -1,7 +1,7 @@
 #pragma once
 #include "RT1W\textures\texture.h"
 
-class solid_color : public texture
+class solid_color : public base_texture
 {
 public:
 	solid_color() {}
