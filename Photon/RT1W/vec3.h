@@ -1,8 +1,9 @@
 #pragma once
 #include <cmath>
 #include <iostream>
-
 #include "Util/UtilityManager.h"
+
+#include <cuda_runtime.h>
 
 using std::sqrt;
 
@@ -21,7 +22,7 @@ public:
 	vec3() : e{ 0,0,0 } {}
 	vec3(double e0, double e1, double e2) : e{ e0, e1, e2 } {}
 
-	double x() const { return e[0]; }
+	__host__ double x() const { return e[0]; }
 	double y() const { return e[1]; }
 	double z() const { return e[2]; }
 
