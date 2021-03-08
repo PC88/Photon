@@ -2,6 +2,22 @@
 #include "RT1W/colour.h" // output function
 #include <curand_kernel.h> // cuRAND
 
+// credit: https://github.com/rogerallen/raytracinginoneweekendincuda/tree/master
+// credit: https://developer.nvidia.com/blog/accelerated-ray-tracing-cuda/
+// limited version of checkCudaErrors from helper_cuda.h in CUDA examples
+#define checkCudaErrors(val) check_cuda( (val), #val, __FILE__, __LINE__ )
+
+void check_cuda(cudaError_t result, char const* const func, const char* const file, int const line) 
+{
+	if (result) {
+		std::cerr << "CUDA error = " << static_cast<unsigned int>(result) << " at " <<
+			file << ":" << line << " '" << func << "' \n";
+		// Make sure we call CUDA Device Reset before exiting
+		cudaDeviceReset();
+		exit(99);
+	}
+}
+
 GPU_RT_Demo::GPU_RT_Demo()
 {
 	// Image
