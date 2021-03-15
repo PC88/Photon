@@ -20,7 +20,7 @@ bool bvh_node::hit(const ray& r, double t_min, double t_max, hit_record& rec) co
 bvh_node::bvh_node(std::vector<std::shared_ptr<hittable>>& objects,
 	size_t start, size_t end, double time0, double time1)
 {
-	int axis = UtilityManager::instance().random_int(0, 2);
+	const int axis = UtilityManager::instance().random_int(0, 2);
 
 	// comparator, this is a function of. 
 	// std compare https://en.cppreference.com/w/cpp/named_req/Compare
@@ -29,6 +29,17 @@ bvh_node::bvh_node(std::vector<std::shared_ptr<hittable>>& objects,
 	auto comparator = (axis == 0) ? box_x_compare
 		: (axis == 1) ? box_y_compare
 		: box_z_compare;
+
+	//auto comparator = [&](const auto a, const auto b) // shared ptrs hittable
+	//{return(axis == 0) ? UtilityManager::instance().box_x_compare(a,b)
+	//		: (axis == 1) ? UtilityManager::instance().box_y_compare(a,b)
+	//		: UtilityManager::instance().box_z_compare(a,b); };
+
+	//auto comparator = [&](const auto a, const auto b) // more concise version of above - note actually an object
+	//{
+	//	return UtilityManager::instance().box_compare(a, b, axis);
+	//};
+
 
 	size_t object_span = end - start;
 

@@ -48,7 +48,7 @@ static void write_color_ppm(color pixel_color, int samples_per_pixel,
 	// Write the translated [0,255] value of each color component.
 
 	//data.resize(img.w * img.h * img.nchannels);
-	data.emplace_back(static_cast<int>(256 * UtilityManager::instance().clamp(r, 0.0, 0.999)));
-	data.emplace_back(static_cast<int>(256 * UtilityManager::instance().clamp(g, 0.0, 0.999)));
-	data.emplace_back(static_cast<int>(256 * UtilityManager::instance().clamp(b, 0.0, 0.999)));
+	data.push_back(static_cast<int>(256 * UtilityManager::instance().clamp(r, 0.0, 0.999)));
+	data.push_back(static_cast<int>(256 * UtilityManager::instance().clamp(g, 0.0, 0.999)));
+	data.push_back(static_cast<int>(256 * UtilityManager::instance().clamp(b, 0.0, 0.999)));
 }

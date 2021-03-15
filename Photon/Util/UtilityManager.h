@@ -82,6 +82,14 @@ public:
 	double schlick(double cosine, double ref_idx);
 
 
+	inline bool box_compare(const std::shared_ptr<hittable> a, const std::shared_ptr<hittable> b, int axis);
+
+	bool box_x_compare(const std::shared_ptr<hittable> a, const std::shared_ptr<hittable> b);
+
+	bool box_y_compare(const std::shared_ptr<hittable> a, const std::shared_ptr<hittable> b);
+
+	bool box_z_compare(const std::shared_ptr<hittable> a, const std::shared_ptr<hittable> b);
+
 private:
 	UtilityManager();
 	virtual ~UtilityManager();

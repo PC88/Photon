@@ -34,7 +34,7 @@ struct ppm
 
   void write(const char *filename, const std::vector<unsigned char> &data)
   {
-    const unsigned entries_per_line = 18;
+    const unsigned entries_per_line = 3;
     std::string str;
     str.reserve(capacity);
     std::stringstream ss(str);
