@@ -55,4 +55,8 @@ public:
     hittable_list cornell_box();
     hittable_list cornell_smoke();
     hittable_list final_scene();
+
+    // simple CUDA wrapping functions
+    void initCuda(int width, int height);
+    void cleanCuda();
 };

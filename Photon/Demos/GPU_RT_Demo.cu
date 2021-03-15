@@ -146,6 +146,23 @@ GPU_RT_Demo::GPU_RT_Demo()
 	std::cerr << "\nDone.\n";
 }
 
+
+void GPU_RT_Demo::initCuda(int width, int height)
+{
+	int num_pixels = width * height;
+	size_t fb_size = 3 * num_pixels * sizeof(float);
+
+	// allocate FB
+	float* fb;
+	checkCudaErrors(cudaMallocManaged((void**)&fb, fb_size));
+}
+
+void GPU_RT_Demo::cleanCuda()
+{
+
+}
+
+
 GPU_RT_Demo::~GPU_RT_Demo()
 {
 
@@ -455,3 +472,4 @@ hittable_list GPU_RT_Demo::final_scene()
 
 	return objects;
 }
+

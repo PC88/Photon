@@ -96,3 +96,10 @@ bool box_x_compare(const std::shared_ptr<hittable> a, const std::shared_ptr<hitt
 bool box_y_compare(const std::shared_ptr<hittable> a, const std::shared_ptr<hittable> b);
 
 bool box_z_compare(const std::shared_ptr<hittable> a, const std::shared_ptr<hittable> b);
+
+//quick test for first version of parallel
+static inline double random_double()
+{
+	// Returns a random real in [0,1).
+	return rand() / (RAND_MAX + 1.0);
+}
