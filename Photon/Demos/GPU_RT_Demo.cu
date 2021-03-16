@@ -117,9 +117,10 @@ GPU_RT_Demo::GPU_RT_Demo()
 	ppm img;
 	img.w = image_width;
 	img.h = image_height;
-	img.capacity = img.w * img.h * img.nchannels + 200;
+	img.magic = "P3";
+	img.max = 255;
+	img.capacity = img.w * img.h * img.nchannels;
 	std::vector<unsigned char> outputData;
-	outputData.resize(img.w * img.h * img.nchannels);
 	// Render
 	std::cout << "P3\n" << image_width << ' ' << image_height << "\n255\n";
 

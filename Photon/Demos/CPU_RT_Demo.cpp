@@ -104,7 +104,6 @@ CPU_RT_Demo::CPU_RT_Demo()
 	img.max = 255;
 	img.capacity = img.w * img.h * img.nchannels;
 	std::vector<unsigned char> outputData;
-	//outputData.resize(img.w * img.h * img.nchannels);
 	// Render
 	std::cout << "P3\n" << image_width << ' ' << image_height << "\n255\n";
 
