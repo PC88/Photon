@@ -1,7 +1,53 @@
 #pragma once
 #include "Demo.h"
+
+#include "RT1W\vec3.h"
+#include "RT1W\ray.h"
+#include "RT1W\hittables\hittable.h"
+#include "RT1W\hittables\sphere.h"
+// added
+#include "RT1W\hittables\translate.h"
+#include "RT1W\hittables\rotate_y.h"
+// added
+#include "RT1W\hittables\hittable_list.h"
+#include "RT1W/camera.h"
+
+
+#include "RT1W\textures\image_texture.h"
+#include "RT1W\textures\noise_texture.h"
+#include "RT1W\textures\solid_color.h"
+#include "RT1W\textures\texture.h"
+
+#include "RT1W\materials\metal.h"
+#include "RT1W\materials\lambertian.h"
+#include "RT1W\materials\dielectric.h"
+#include "RT1W\hittables\moving_sphere.h"
+
+#include "RT1W\textures\checker_texture.h"
+#include "RT1W\hittables\aarect.h"
+#include "RT1W\hittables\box.h"
+#include "RT1W\hittables\constant_medium.h"
+#include "RT1W\hittables\bvh.h"
+
 class PresentationDemo :
     public Demo
 {
+public:
+	PresentationDemo();
+	virtual ~PresentationDemo();
+
+	// Optional inherited functions
+	virtual void Update(double interval) override;
+	virtual void ImGuiRender() override;
+	virtual void Render() override;
+
+	double hit_sphere(const point3& center, double radius, const ray& r);
+
+	// depth is added here to stop the recursions from blowing the stack
+	color ray_color(const ray& r, const color& background, const hittable& world, int depth);
+
+	// cover image function
+	hittable_list final_scene();
+
 };
 
