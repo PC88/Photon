@@ -31,7 +31,7 @@ static void write_color(std::ostream &out, color pixel_color, int samples_per_pi
 
 //TODO: modify this to output to a ppm file.
 static void write_color_ppm(color pixel_color, int samples_per_pixel,
-	std::vector<unsigned char>& data, ppm& img)
+	std::vector<unsigned char>& data)
 {
 	auto r = pixel_color.x();
 	auto g = pixel_color.y();

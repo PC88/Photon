@@ -76,7 +76,7 @@ GPU_RT_Demo::GPU_RT_Demo()
 				ray r = cam.get_ray(u, v);
 				pixel_color += ray_color(r, background, world, max_depth);
 			}
-			write_color_ppm(pixel_color, samples_per_pixel, outputData, img);
+			write_color_ppm(pixel_color, samples_per_pixel, outputData);
 		}
 	}
 
