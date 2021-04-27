@@ -21,7 +21,7 @@ PresentationDemo::PresentationDemo()
 	world = final_scene();
 	aspect_ratio = 1.0;
 	image_width = 800;
-	samples_per_pixel = 1000;
+	samples_per_pixel = 10;
 	background = color(0, 0, 0);
 	lookfrom = point3(478, 278, -600);
 	lookat = point3(278, 278, 0);
@@ -187,7 +187,7 @@ hittable_list PresentationDemo::final_scene()
 		objects.add(std::make_shared<xy_rect>(140, 200, 75, 125, 554, light));
 		objects.add(std::make_shared<xy_rect>(140, 200, 0, 50, 554, light));
 	}
-	// the 'L'&'L' in hello
+	 //the 'L'&'L' in hello
 	{
 		objects.add(std::make_shared<xy_rect>(0, 90, 0, 50, 554, light));
 		objects.add(std::make_shared<xy_rect>(40, 90, 0, 200, 554, light));
