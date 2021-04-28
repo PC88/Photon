@@ -9,11 +9,6 @@
 // limited version of checkCudaErrors from helper_cuda.h in CUDA examples
 #define checkCudaErrors(val) check_cuda( (val), #val, __FILE__, __LINE__ )
 
-// credit: https://github.com/rogerallen/raytracinginoneweekendincuda/tree/master
-// credit: https://developer.nvidia.com/blog/accelerated-ray-tracing-cuda/
-// limited version of checkCudaErrors from helper_cuda.h in CUDA examples
-#define checkCudaErrors(val) check_cuda( (val), #val, __FILE__, __LINE__ )
-
 void check_cuda(cudaError_t result, char const* const func, const char* const file, int const line)
 {
 	if (result)
