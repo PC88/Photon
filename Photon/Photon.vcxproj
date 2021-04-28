@@ -134,7 +134,6 @@
     <ClInclude Include="RT1W\hittables\bvh.h" />
     <ClInclude Include="RT1W\camera.h" />
     <ClInclude Include="RT1W\textures\checker_texture.h" />
-    <ClInclude Include="RT1W\colour.h" />
     <ClInclude Include="RT1W\hittables\constant_medium.h" />
     <ClInclude Include="RT1W\materials\dielectric.h" />
     <ClInclude Include="RT1W\hittables\hittable.h" />

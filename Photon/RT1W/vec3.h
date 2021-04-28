@@ -65,14 +65,14 @@ public:
 		return e[0] * e[0] + e[1] * e[1] + e[2] * e[2];
 	}
 
-	inline static vec3 random()
+	__host__ __device__ inline static vec3 random()
 	{
 		return vec3(UtilityManager::instance().random_double(),
 			UtilityManager::instance().random_double(),
 			UtilityManager::instance().random_double());
 	}
 
-	inline static vec3 random(double min, double max)
+	__host__ __device__ inline static vec3 random(double min, double max)
 	{
 		return vec3(UtilityManager::instance().random_double(min, max),
 			UtilityManager::instance().random_double(min, max), 
@@ -143,8 +143,8 @@ __host__ __device__ inline vec3 unit_vector(vec3 v)
 
 
 // Type aliases for vec3
-using point3 = vec3;   // 3D point
-using color = vec3;    // RGB
+using  point3 = vec3;   // 3D point
+using  color = vec3;    // RGB
 
 // needs to be defined below the .h - re-factored
 //vec3 random_in_unit_disk();

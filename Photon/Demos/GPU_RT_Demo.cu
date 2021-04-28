@@ -1,6 +1,6 @@
 ﻿#include "GPU_RT_Demo.h"
-#include "RT1W/colour.h" // output function
 #include <curand_kernel.h> // cuRAND
+#include "ppm/ppm.hpp"
 
 // test commit GPU
 
@@ -99,7 +99,6 @@ void GPU_RT_Demo::cleanCuda()
 {
 
 }
-
 
 GPU_RT_Demo::~GPU_RT_Demo()
 {

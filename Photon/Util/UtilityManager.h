@@ -3,11 +3,13 @@
 #include <iostream>
 #include <string>
 
+#include <cuda_runtime.h>
 // includes moved here from rtweekend.h
 #include <memory>
 #include <cmath>
 #include <cstdlib>
 #include <limits>
+#include <vector>
 // includes moved here from rtweekend.h
 
 class vec3; // forward dec
@@ -18,7 +20,6 @@ class UtilityManager
 {
 public:
 	static UtilityManager& instance();
-
 
 	UtilityManager(UtilityManager const&) = delete;
 	void operator=(UtilityManager const&) = delete;
@@ -33,13 +34,13 @@ public:
 		return degrees * UtilityManager::instance().pi / 180.0;
 	}
 
-	static inline double random_double()
+	static __device__ __host__ inline double random_double()
 	{
 		// Returns a random real in [0,1).
 		return rand() / (RAND_MAX + 1.0);
 	}
 
-	static inline double random_double(double min, double max)
+	static __device__ __host__ inline double random_double(double min, double max)
 	{
 		// Returns a random real in [min,max).
 		return min + (max - min) * random_double();
@@ -52,7 +53,7 @@ public:
 		return x;
 	}
 
-	static inline int random_int(int min, int max)
+	static __device__ __host__ inline int random_int(int min, int max)
 	{
 		// Returns a random integer in [min,max].
 		return static_cast<int>(random_double(min, max + 1));
@@ -111,3 +112,7 @@ static inline double random_double()
 	// Returns a random real in [0,1).
 	return rand() / (RAND_MAX + 1.0);
 }
+
+void write_color_ppm(vec3 pixel_color, int samples_per_pixel, std::vector<unsigned char>& data);
+
+void write_color(std::ostream& out, vec3 pixel_color, int samples_per_pixel);

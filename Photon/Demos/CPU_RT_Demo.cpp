@@ -1,5 +1,5 @@
 #include "CPU_RT_Demo.h"
-#include "RT1W/colour.h" // output function
+#include "ppm/ppm.hpp"
 
 CPU_RT_Demo::CPU_RT_Demo()
 {

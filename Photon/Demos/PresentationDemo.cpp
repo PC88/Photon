@@ -1,5 +1,5 @@
 #include "PresentationDemo.h"
-#include "RT1W/colour.h"
+#include "ppm/ppm.hpp"
 
 PresentationDemo::PresentationDemo()
 {
