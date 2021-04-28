@@ -87,7 +87,7 @@
     <ClCompile Include="Demos\DemoManager.cpp" />
     <ClCompile Include="Demos\Imgui_DX_12_Demo.cpp" />
     <ClCompile Include="Demos\PresentationDemo.cpp" />
-    <ClCompile Include="Demos\RA_GPU_RT_Demo.cpp" />
+    <ClCompile Include="Demos\RA_GPU_RT_Demo.cu" />
     <ClCompile Include="RT1W\hittables\aarect.cpp" />
     <ClCompile Include="RT1W\hittables\box.cpp" />
     <ClCompile Include="RT1W\hittables\bvh.cpp" />
@@ -126,7 +126,7 @@
     <ClInclude Include="Demos\Imgui_DX_12_Demo.h" />
     <ClInclude Include="ppm\ppm.hpp" />
     <ClInclude Include="Demos\PresentationDemo.h" />
-    <ClInclude Include="Demos\RA_GPU_RT_Demo.h" />
+    <ClInclude Include="Demos\RA_GPU_RT_Demo.cuh" />
     <ClInclude Include="RT1W\textures\noise_texture.h" />
     <ClInclude Include="RT1W\textures\image_texture.h" />
     <ClInclude Include="RT1W\hittables\rotate_y.h" />
