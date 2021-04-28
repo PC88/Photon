@@ -44,7 +44,7 @@ public:
     double hit_sphere(const point3& center, double radius, const ray& r);
 
     // depth is added here to stop the recursions from blowing the stack
-    color ray_color(const ray& r, const color& background, const hittable& world, int depth);
+    __host__ __device__ color ray_color(const ray& r, const color& background, const hittable& world, int depth);
 
     // cover image function
     hittable_list random_scene();

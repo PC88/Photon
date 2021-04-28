@@ -1,5 +1,5 @@
 #include "PresentationDemo.h"
-#include "RT1W/colour.h"
+#include "ppm/ppm.hpp"
 
 PresentationDemo::PresentationDemo()
 {
@@ -57,7 +57,7 @@ PresentationDemo::PresentationDemo()
 				ray r = cam.get_ray(u, v);
 				pixel_color += ray_color(r, background, world, max_depth);
 			}
-			write_color_ppm(pixel_color, samples_per_pixel, outputData, img);
+			write_color_ppm(pixel_color, samples_per_pixel, outputData);
 		}
 	}
 

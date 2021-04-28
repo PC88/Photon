@@ -1,6 +1,8 @@
-﻿#include "GPU_RT_Demo.h"
-#include "RT1W/colour.h" // output function
+﻿#include "Demos\GPU_RT_Demo.h"
 #include <curand_kernel.h> // cuRAND
+#include "ppm/ppm.hpp"
+
+// test commit GPU
 
 // credit: https://github.com/rogerallen/raytracinginoneweekendincuda/tree/master
 // credit: https://developer.nvidia.com/blog/accelerated-ray-tracing-cuda/
@@ -18,12 +20,52 @@ void check_cuda(cudaError_t result, char const* const func, const char* const fi
 	}
 }
 
+// kernel function
+//__global__ void gpu_render(vec3* fb, int width, int height, int samples_per_pixel,
+//	const int max_depth, unsigned char* outputData, hittable** world, camera* cam)
+//{
+//	int i = threadIdx.x + blockIdx.x * blockDim.x;
+//	int j = threadIdx.y + blockIdx.y * blockDim.y;
+//	if ((i >= width) || (j >= height)) return;
+//
+//	color background(0, 0, 0);
+//	color pixel_color(0, 0, 0);
+//	for (int s = 0; s < samples_per_pixel; ++s)
+//	{
+//		auto u = (i + UtilityManager::instance().random_double()) / (width - 1);
+//		auto v = (j + UtilityManager::instance().random_double()) / (height - 1);
+//		ray r = cam->get_ray(u, v);
+//		pixel_color += ray_color(r, background, world, max_depth);
+//	}
+//	write_color_ppm(pixel_color, samples_per_pixel, outputData);
+//
+//
+//	auto r = pixel_color.x();
+//	auto g = pixel_color.y();
+//	auto b = pixel_color.z();
+//
+//	// Divide the color by the number of samples and gamma-correct for gamma=2.0.
+//	auto scale = 1.0 / samples_per_pixel;
+//
+//	// refactored to use std::sqrt
+//	r = sqrt(scale * r);
+//	g = sqrt(scale * g);
+//	b = sqrt(scale * b);
+//
+//	// Write the translated [0,255] value of each color component.
+//
+//	//data.resize(img.w * img.h * img.nchannels);
+//	data.push_back(static_cast<int>(256 * UtilityManager::instance().clamp(r, 0.0, 0.999)));
+//	data.push_back(static_cast<int>(256 * UtilityManager::instance().clamp(g, 0.0, 0.999)));
+//	data.push_back(static_cast<int>(256 * UtilityManager::instance().clamp(b, 0.0, 0.999)));
+//}
+
 GPU_RT_Demo::GPU_RT_Demo()
 {
 	// Image
 	auto aspect_ratio = 16.0 / 9.0;
 	int image_width = 400;
-	int samples_per_pixel = 10; // was 100
+	int samples_per_pixel = 2; // was 100
 	const int max_depth = 50;
 
 	// World
@@ -35,77 +77,14 @@ GPU_RT_Demo::GPU_RT_Demo()
 	auto aperture = 0.0;
 	color background(0, 0, 0);
 
-	switch (8)
-	{
-	case 1:
-		world = random_scene();
-		background = color(0.70, 0.80, 1.00);
-		lookfrom = point3(13, 2, 3);
-		lookat = point3(0, 0, 0);
-		vfov = 20.0;
-		aperture = 0.1;
-		break;
-
-	default:
-	case 2:
-		world = two_spheres();
-		background = color(0.70, 0.80, 1.00);
-		lookfrom = point3(13, 2, 3);
-		lookat = point3(0, 0, 0);
-		vfov = 20.0;
-		break;
-	case 3:
-		world = two_perlin_spheres();
-		background = color(0.70, 0.80, 1.00);
-		lookfrom = point3(13, 2, 3);
-		lookat = point3(0, 0, 0);
-		vfov = 20.0;
-		break;
-	case 4:
-		world = earth();
-		background = color(0.70, 0.80, 1.00);
-		lookfrom = point3(13, 2, 3);
-		lookat = point3(0, 0, 0);
-		vfov = 20.0;
-		break;
-	case 5:
-		world = simple_light();
-		samples_per_pixel = 400;
-		background = color(0, 0, 0);
-		lookfrom = point3(26, 3, 6);
-		lookat = point3(0, 2, 0);
-		vfov = 20.0;
-		break;
-	case 6:
-		world = cornell_box();
-		aspect_ratio = 1.0;
-		image_width = 600;
-		samples_per_pixel = 200;
-		background = color(0, 0, 0);
-		lookfrom = point3(278, 278, -800);
-		lookat = point3(278, 278, 0);
-		vfov = 40.0;
-		break;
-	case 7:
-		world = cornell_smoke();
-		aspect_ratio = 1.0;
-		image_width = 600;
-		samples_per_pixel = 200;
-		lookfrom = point3(278, 278, -800);
-		lookat = point3(278, 278, 0);
-		vfov = 40.0;
-		break;
-	case 8:
-		world = final_scene();
-		aspect_ratio = 1.0;
-		image_width = 800;
-		samples_per_pixel = 10;
-		background = color(0, 0, 0);
-		lookfrom = point3(478, 278, -600);
-		lookat = point3(278, 278, 0);
-		vfov = 40.0;
-		break;
-	}
+	world = final_scene();
+	aspect_ratio = 1.0;
+	image_width = 800;
+	samples_per_pixel = 2;
+	background = color(0, 0, 0);
+	lookfrom = point3(478, 278, -600);
+	lookat = point3(278, 278, 0);
+	vfov = 40.0;
 
 	// Camera
 	vec3 vup(0, 1, 0);
@@ -137,13 +116,19 @@ GPU_RT_Demo::GPU_RT_Demo()
 				ray r = cam.get_ray(u, v);
 				pixel_color += ray_color(r, background, world, max_depth);
 			}
-			//write_color(std::cout, pixel_color, samples_per_pixel);
-			write_color_ppm(pixel_color, samples_per_pixel, outputData, img);
+			write_color_ppm(pixel_color, samples_per_pixel, outputData);
 		}
 	}
 
-	img.write("test.ppm", outputData);
+	// Render our buffer
+	//int tx = 8;
+	//int ty = 8;
 
+	//dim3 blocks(image_width / tx + 1, image_height / ty + 1);
+	//dim3 threads(tx, ty);
+	//gpu_render<<<blocks, threads>>>(fb, img.w, img.h);
+
+	img.write("test.ppm", outputData);
 	std::cerr << "\nDone.\n";
 }
 
@@ -162,7 +147,6 @@ void GPU_RT_Demo::cleanCuda()
 {
 
 }
-
 
 GPU_RT_Demo::~GPU_RT_Demo()
 {
@@ -209,7 +193,7 @@ double GPU_RT_Demo::hit_sphere(const point3& center, double radius, const ray& r
 	}
 }
 
-color GPU_RT_Demo::ray_color(const ray& r, const color& background, const hittable& world, int depth)
+__host__ __device__ color GPU_RT_Demo::ray_color(const ray& r, const color& background, const hittable& world, int depth)
 {
 	hit_record rec;
 

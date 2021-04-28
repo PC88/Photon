@@ -86,8 +86,8 @@
     <ClCompile Include="Demos\Demo.cpp" />
     <ClCompile Include="Demos\DemoManager.cpp" />
     <ClCompile Include="Demos\Imgui_DX_12_Demo.cpp" />
-    <ClCompile Include="Demos\GPU_Int_Demo_1.cpp" />
     <ClCompile Include="Demos\PresentationDemo.cpp" />
+    <ClCompile Include="Demos\RA_GPU_RT_Demo.cpp" />
     <ClCompile Include="RT1W\hittables\aarect.cpp" />
     <ClCompile Include="RT1W\hittables\box.cpp" />
     <ClCompile Include="RT1W\hittables\bvh.cpp" />
@@ -124,9 +124,9 @@
     <ClInclude Include="Demos\DemoManager.h" />
     <ClInclude Include="Demos\GPU_RT_Demo.h" />
     <ClInclude Include="Demos\Imgui_DX_12_Demo.h" />
-    <ClInclude Include="Demos\GPU_Int_Demo_1.h" />
     <ClInclude Include="ppm\ppm.hpp" />
     <ClInclude Include="Demos\PresentationDemo.h" />
+    <ClInclude Include="Demos\RA_GPU_RT_Demo.h" />
     <ClInclude Include="RT1W\textures\noise_texture.h" />
     <ClInclude Include="RT1W\textures\image_texture.h" />
     <ClInclude Include="RT1W\hittables\rotate_y.h" />
@@ -136,7 +136,6 @@
     <ClInclude Include="RT1W\hittables\bvh.h" />
     <ClInclude Include="RT1W\camera.h" />
     <ClInclude Include="RT1W\textures\checker_texture.h" />
-    <ClInclude Include="RT1W\colour.h" />
     <ClInclude Include="RT1W\hittables\constant_medium.h" />
     <ClInclude Include="RT1W\materials\dielectric.h" />
     <ClInclude Include="RT1W\hittables\hittable.h" />
