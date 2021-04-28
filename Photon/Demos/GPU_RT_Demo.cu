@@ -1,4 +1,4 @@
-﻿#include "GPU_RT_Demo.h"
+﻿#include "Demos\GPU_RT_Demo.h"
 #include <curand_kernel.h> // cuRAND
 #include "ppm/ppm.hpp"
 
@@ -19,6 +19,46 @@ void check_cuda(cudaError_t result, char const* const func, const char* const fi
 		exit(99);
 	}
 }
+
+// kernel function
+//__global__ void gpu_render(vec3* fb, int width, int height, int samples_per_pixel,
+//	const int max_depth, unsigned char* outputData, hittable** world, camera* cam)
+//{
+//	int i = threadIdx.x + blockIdx.x * blockDim.x;
+//	int j = threadIdx.y + blockIdx.y * blockDim.y;
+//	if ((i >= width) || (j >= height)) return;
+//
+//	color background(0, 0, 0);
+//	color pixel_color(0, 0, 0);
+//	for (int s = 0; s < samples_per_pixel; ++s)
+//	{
+//		auto u = (i + UtilityManager::instance().random_double()) / (width - 1);
+//		auto v = (j + UtilityManager::instance().random_double()) / (height - 1);
+//		ray r = cam->get_ray(u, v);
+//		pixel_color += ray_color(r, background, world, max_depth);
+//	}
+//	write_color_ppm(pixel_color, samples_per_pixel, outputData);
+//
+//
+//	auto r = pixel_color.x();
+//	auto g = pixel_color.y();
+//	auto b = pixel_color.z();
+//
+//	// Divide the color by the number of samples and gamma-correct for gamma=2.0.
+//	auto scale = 1.0 / samples_per_pixel;
+//
+//	// refactored to use std::sqrt
+//	r = sqrt(scale * r);
+//	g = sqrt(scale * g);
+//	b = sqrt(scale * b);
+//
+//	// Write the translated [0,255] value of each color component.
+//
+//	//data.resize(img.w * img.h * img.nchannels);
+//	data.push_back(static_cast<int>(256 * UtilityManager::instance().clamp(r, 0.0, 0.999)));
+//	data.push_back(static_cast<int>(256 * UtilityManager::instance().clamp(g, 0.0, 0.999)));
+//	data.push_back(static_cast<int>(256 * UtilityManager::instance().clamp(b, 0.0, 0.999)));
+//}
 
 GPU_RT_Demo::GPU_RT_Demo()
 {
@@ -79,6 +119,14 @@ GPU_RT_Demo::GPU_RT_Demo()
 			write_color_ppm(pixel_color, samples_per_pixel, outputData);
 		}
 	}
+
+	// Render our buffer
+	//int tx = 8;
+	//int ty = 8;
+
+	//dim3 blocks(image_width / tx + 1, image_height / ty + 1);
+	//dim3 threads(tx, ty);
+	//gpu_render<<<blocks, threads>>>(fb, img.w, img.h);
 
 	img.write("test.ppm", outputData);
 	std::cerr << "\nDone.\n";
@@ -145,7 +193,7 @@ double GPU_RT_Demo::hit_sphere(const point3& center, double radius, const ray& r
 	}
 }
 
-color GPU_RT_Demo::ray_color(const ray& r, const color& background, const hittable& world, int depth)
+__host__ __device__ color GPU_RT_Demo::ray_color(const ray& r, const color& background, const hittable& world, int depth)
 {
 	hit_record rec;
 

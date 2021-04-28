@@ -21,8 +21,6 @@ UtilityManager::UtilityManager()
 
 }
 
-
-
 vec3 UtilityManager::random_in_unit_disk()
 {
 	while (true)

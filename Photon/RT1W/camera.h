@@ -13,7 +13,7 @@ public:
 		double t0 = 0,
 		double t1 = 0);
 
-	ray get_ray(double s, double t) const;
+	__host__ __device__ ray get_ray(double s, double t) const;
 
 private:
 	point3 origin;

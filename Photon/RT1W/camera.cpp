@@ -21,7 +21,7 @@ camera::camera(point3 lookfrom, point3 lookat, vec3 vup, double vfov,/* vertical
 	time1 = t1;
 }
 
-ray camera::get_ray(double s, double t) const
+__host__ __device__ ray camera::get_ray(double s, double t) const
 {
 
 	vec3 rd = lens_radius * UtilityManager::instance().random_in_unit_disk();
