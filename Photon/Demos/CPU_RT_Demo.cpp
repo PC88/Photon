@@ -120,7 +120,6 @@ CPU_RT_Demo::CPU_RT_Demo()
 				ray r = cam.get_ray(u, v);
 				pixel_color += ray_color(r, background, world, max_depth);
 			}
-			//write_color(std::cout, pixel_color, samples_per_pixel);
 			write_color_ppm(pixel_color, samples_per_pixel, outputData);
 		}
 	}
