@@ -125,6 +125,13 @@
     <ClInclude Include="Demos\Imgui_DX_12_Demo.h" />
     <ClInclude Include="ppm\ppm.hpp" />
     <ClInclude Include="Demos\PresentationDemo.h" />
+    <ClInclude Include="RA_RT1W\camera.cuh" />
+    <ClInclude Include="RA_RT1W\hitable.cuh" />
+    <ClInclude Include="RA_RT1W\hitable_list.cuh" />
+    <ClInclude Include="RA_RT1W\material.cuh" />
+    <ClInclude Include="RA_RT1W\ray.cuh" />
+    <ClInclude Include="RA_RT1W\sphere.cuh" />
+    <ClInclude Include="RA_RT1W\vec3.cuh" />
     <ClInclude Include="RT1W\textures\noise_texture.h" />
     <ClInclude Include="RT1W\textures\image_texture.h" />
     <ClInclude Include="RT1W\hittables\rotate_y.h" />
@@ -165,6 +172,11 @@
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="Demos\GPU_RT_Demo.cu" />
+    <CudaCompile Include="RA_RT1W\camera.cu" />
+    <CudaCompile Include="RA_RT1W\hitable_list.cu" />
+    <CudaCompile Include="RA_RT1W\material.cu" />
+    <CudaCompile Include="RA_RT1W\ray.cu" />
+    <CudaCompile Include="RA_RT1W\sphere.cu" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
