@@ -201,17 +201,35 @@ GPU_RT_Demo::GPU_RT_Demo()
 	double timer_seconds = ((double)(stop - start)) / CLOCKS_PER_SEC;
 	std::cerr << "took " << timer_seconds << " seconds.\n";
 
+	ppm img;
+	img.w = nx;
+	img.h = ny;
+	img.magic = "P3";
+	img.max = 255;
+	img.capacity = img.w * img.h * img.nchannels;
+	std::vector<unsigned char> data;
+
+
 	// Output FB as Image
-	std::cout << "P3\n" << nx << " " << ny << "\n255\n";
+	//std::cout << "P3\n" << nx << " " << ny << "\n255\n";
 	for (int j = ny - 1; j >= 0; j--) {
 		for (int i = 0; i < nx; i++) {
 			size_t pixel_index = j * nx + i;
 			int ir = int(255.99 * fb[pixel_index].r());
 			int ig = int(255.99 * fb[pixel_index].g());
 			int ib = int(255.99 * fb[pixel_index].b());
-			std::cout << ir << " " << ig << " " << ib << "\n";
+
+
+			data.push_back(static_cast<int>(ir));
+			data.push_back(static_cast<int>(ig));
+			data.push_back(static_cast<int>(ib));
+
+			//std::cout << ir << " " << ig << " " << ib << "\n";
 		}
 	}
+
+	img.write("gpu_test.ppm", data);
+
 
 	// clean up
 	checkCudaErrors(cudaDeviceSynchronize());
