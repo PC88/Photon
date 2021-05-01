@@ -1,32 +1,17 @@
 ﻿#include "Demo.h"
+#include <iostream>
+#include <time.h>
+#include <float.h>
+#include <curand_kernel.h>
 
-#include "RT1W\vec3.h"
-#include "RT1W\ray.h"
-#include "RT1W\hittables\hittable.h"
-#include "RT1W\hittables\sphere.h"
-// added
-#include "RT1W\hittables\translate.h"
-#include "RT1W\hittables\rotate_y.h"
-// added
-#include "RT1W\hittables\hittable_list.h"
-#include "RT1W/camera.h"
+// Roger Allen classes, ported to more modular type and within namespace
 
-
-#include "RT1W\textures\image_texture.h"
-#include "RT1W\textures\noise_texture.h"
-#include "RT1W\textures\solid_color.h"
-#include "RT1W\textures\texture.h"
-
-#include "RT1W\materials\metal.h"
-#include "RT1W\materials\lambertian.h"
-#include "RT1W\materials\dielectric.h"
-#include "RT1W\hittables\moving_sphere.h"
-
-#include "RT1W\textures\checker_texture.h"
-#include "RT1W\hittables\aarect.h"
-#include "RT1W\hittables\box.h"
-#include "RT1W\hittables\constant_medium.h"
-#include "RT1W\hittables\bvh.h"
+#include "RA_RT1W\vec3.cuh"
+#include "RA_RT1W\ray.cuh"
+#include "RA_RT1W\sphere.cuh"
+#include "RA_RT1W\hitable_list.cuh"
+#include "RA_RT1W\camera.cuh"
+#include "RA_RT1W\material.cuh"
 
 
 class GPU_RT_Demo :
