@@ -4,6 +4,8 @@
 
 // test commit GPU
 
+// commit to mark reverting to alternate form,
+
 // credit: https://github.com/rogerallen/raytracinginoneweekendincuda/tree/master
 // credit: https://developer.nvidia.com/blog/accelerated-ray-tracing-cuda/
 // limited version of checkCudaErrors from helper_cuda.h in CUDA examples
