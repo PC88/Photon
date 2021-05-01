@@ -3,6 +3,9 @@
 #include <stdlib.h>
 #include <iostream>
 
+// credit Roger Allen for the original
+// credit: https://developer.nvidia.com/blog/accelerated-ray-tracing-cuda/
+
 namespace RA
 {
 

@@ -6,6 +6,9 @@
 
 // Roger Allen classes, ported to more modular type and within namespace
 
+// credit Roger Allen for the original
+// credit: https://developer.nvidia.com/blog/accelerated-ray-tracing-cuda/
+
 #include "RA_RT1W\vec3.cuh"
 #include "RA_RT1W\ray.cuh"
 #include "RA_RT1W\sphere.cuh"

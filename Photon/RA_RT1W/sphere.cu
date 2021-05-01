@@ -1,5 +1,8 @@
 ﻿#include "RA_RT1W\sphere.cuh"
 
+// credit Roger Allen for the original
+// credit: https://developer.nvidia.com/blog/accelerated-ray-tracing-cuda/
+
 namespace RA
 {
 

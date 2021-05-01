@@ -1,5 +1,8 @@
 ﻿#pragma once
 
+// credit Roger Allen for the original
+// credit: https://developer.nvidia.com/blog/accelerated-ray-tracing-cuda/
+
 #include "RA_RT1W\ray.cuh"
 #include "RA_RT1W\hitable.cuh"
 #include <curand_kernel.h>

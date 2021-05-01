@@ -3,8 +3,7 @@
 #include "ppm/ppm.hpp"
 
 using namespace RA;
-
-// credit: https://github.com/rogerallen/raytracinginoneweekendincuda/tree/master
+// credit Roger Allen for the original
 // credit: https://developer.nvidia.com/blog/accelerated-ray-tracing-cuda/
 // limited version of checkCudaErrors from helper_cuda.h in CUDA examples
 #define checkCudaErrors(val) check_cuda( (val), #val, __FILE__, __LINE__ )
