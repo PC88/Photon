@@ -11,6 +11,8 @@ Inital acceleration aspects learned from Roger Allen's blog:  https://github.com
 
 Falcor and the DXR Material learned from Chris Wyman, credit: http://intro-to-dxr.cwyman.org/
 
+Inital update of them to VS2019, can be found here: https://github.com/PC88/dxrTutors.Code.Win10-RS5 
+
 Initial renders of this branch are detailed below, 10 samples per pixel and 10000 samples per pixel for comparison.
 
 ![CPU starting render 10 samples per pixel](Photon/Images/10_samples_pp.ppm)
