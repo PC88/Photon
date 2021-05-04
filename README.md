@@ -9,6 +9,8 @@ and the specific branch of creation is: https://github.com/PC88/CPU_RT/tree/Phot
 
 Inital acceleration aspects learned from Roger Allen's blog:  https://github.com/rogerallen/raytracinginoneweekendincuda
 
+Falcor and the DXR Material learned from Chris Wyman, credit: http://intro-to-dxr.cwyman.org/
+
 Initial renders of this branch are detailed below, 10 samples per pixel and 10000 samples per pixel for comparison.
 
 ![CPU starting render 10 samples per pixel](Photon/Images/10_samples_pp.ppm)
