@@ -18,13 +18,14 @@ CPU_RT_Demo::CPU_RT_Demo()
 	auto aperture = 0.0;
 	color background(0, 0, 0);
 
-	switch (8)
+	switch (1)
 	{
 	case 1:
 		world = random_scene();
 		background = color(0.70, 0.80, 1.00);
 		lookfrom = point3(13, 2, 3);
 		lookat = point3(0, 0, 0);
+		image_width = 800;
 		vfov = 20.0;
 		aperture = 0.1;
 		break;
@@ -210,8 +211,11 @@ hittable_list CPU_RT_Demo::random_scene()
 {
 	hittable_list world;
 
-	auto checker = std::make_shared<checker_texture>(color(0.2, 0.3, 0.1), color(0.9, 0.9, 0.9));
-	world.add(std::make_shared<sphere>(point3(0, -1000, 0), 1000, std::make_shared<lambertian>(checker)));
+	//auto checker = std::make_shared<checker_texture>(color(0.2, 0.3, 0.1), color(0.9, 0.9, 0.9));
+	//world.add(std::make_shared<sphere>(point3(0, -1000, 0), 1000, std::make_shared<lambertian>(checker)));
+
+	auto ground_material = std::make_shared<lambertian>(color(0.5, 0.5, 0.5));
+	world.add(std::make_shared<sphere>(point3(0, -1000, 0), 1000, ground_material));
 
 	for (int a = -11; a < 11; a++)
 	{

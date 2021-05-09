@@ -166,7 +166,6 @@ bool box_z_compare(const std::shared_ptr<hittable> a, const std::shared_ptr<hitt
 
 
 // global for now - might be changed later its simply for speed
-// static as linkage issues would arise
 void write_color(std::ostream& out, color pixel_color, int samples_per_pixel)
 {
 	auto r = pixel_color.x();
