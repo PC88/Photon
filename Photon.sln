@@ -9,9 +9,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Falcor", "Falcor\Framework\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FalcorSharedObjects", "Falcor\Framework\FalcorSharedObjects\FalcorSharedObjects.vcxproj", "{2C535635-E4C5-4098-A928-574F0E7CD5F9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutor05-AmbientOcclusion", "05-AmbientOcclusion\05-AmbientOcclusion.vcxproj", "{134A832F-CAA2-409D-83B8-A8BA9ECBC0FF}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CW-RTHybrid-AmbientOcclusion", "05-AmbientOcclusion\05-AmbientOcclusion.vcxproj", "{134A832F-CAA2-409D-83B8-A8BA9ECBC0FF}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutor12-DiffuseGlobalIllumination", "12-DiffuseGlobalIllumination\12-DiffuseGlobalIllumination.vcxproj", "{6CE0B2E6-0EB4-4251-9DB4-BE2D6B7F3082}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CW-DXR-DiffuseGlobalIllumination", "12-DiffuseGlobalIllumination\12-DiffuseGlobalIllumination.vcxproj", "{6CE0B2E6-0EB4-4251-9DB4-BE2D6B7F3082}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutor03-RasterGBuffer", "03-RasterGBuffer\03-RasterGBuffer.vcxproj", "{B5FC91A3-D9F6-469E-AE0A-898CACCFB30C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +107,22 @@ Global
 		{6CE0B2E6-0EB4-4251-9DB4-BE2D6B7F3082}.ReleaseDXR|x64.Build.0 = Release|x64
 		{6CE0B2E6-0EB4-4251-9DB4-BE2D6B7F3082}.ReleaseVK|x64.ActiveCfg = Release|x64
 		{6CE0B2E6-0EB4-4251-9DB4-BE2D6B7F3082}.ReleaseVK|x64.Build.0 = Release|x64
+		{B5FC91A3-D9F6-469E-AE0A-898CACCFB30C}.Debug|x64.ActiveCfg = Debug|x64
+		{B5FC91A3-D9F6-469E-AE0A-898CACCFB30C}.Debug|x64.Build.0 = Debug|x64
+		{B5FC91A3-D9F6-469E-AE0A-898CACCFB30C}.DebugD3D12|x64.ActiveCfg = Debug|x64
+		{B5FC91A3-D9F6-469E-AE0A-898CACCFB30C}.DebugD3D12|x64.Build.0 = Debug|x64
+		{B5FC91A3-D9F6-469E-AE0A-898CACCFB30C}.DebugDXR|x64.ActiveCfg = Debug|x64
+		{B5FC91A3-D9F6-469E-AE0A-898CACCFB30C}.DebugDXR|x64.Build.0 = Debug|x64
+		{B5FC91A3-D9F6-469E-AE0A-898CACCFB30C}.DebugVK|x64.ActiveCfg = Debug|x64
+		{B5FC91A3-D9F6-469E-AE0A-898CACCFB30C}.DebugVK|x64.Build.0 = Debug|x64
+		{B5FC91A3-D9F6-469E-AE0A-898CACCFB30C}.Release|x64.ActiveCfg = Release|x64
+		{B5FC91A3-D9F6-469E-AE0A-898CACCFB30C}.Release|x64.Build.0 = Release|x64
+		{B5FC91A3-D9F6-469E-AE0A-898CACCFB30C}.ReleaseD3D12|x64.ActiveCfg = Release|x64
+		{B5FC91A3-D9F6-469E-AE0A-898CACCFB30C}.ReleaseD3D12|x64.Build.0 = Release|x64
+		{B5FC91A3-D9F6-469E-AE0A-898CACCFB30C}.ReleaseDXR|x64.ActiveCfg = Release|x64
+		{B5FC91A3-D9F6-469E-AE0A-898CACCFB30C}.ReleaseDXR|x64.Build.0 = Release|x64
+		{B5FC91A3-D9F6-469E-AE0A-898CACCFB30C}.ReleaseVK|x64.ActiveCfg = Release|x64
+		{B5FC91A3-D9F6-469E-AE0A-898CACCFB30C}.ReleaseVK|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

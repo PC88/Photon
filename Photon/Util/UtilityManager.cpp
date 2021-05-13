@@ -39,7 +39,7 @@ vec3 UtilityManager::refract(const vec3& uv, const vec3& n, double etai_over_eta
 	return r_out_perp + r_out_parallel;
 }
 
-// "The reflected ray direction in red is just v+2b. In our design"
+// "The reflected ray direction in red is just v+2b. In our design", Shirley RT1W
 vec3 UtilityManager::reflect(const vec3& v, const vec3& n)
 {
 	return v - 2 * dot(v, n) * n;

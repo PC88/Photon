@@ -18,8 +18,8 @@
 
 #include "Falcor.h"
 #include "../SharedUtils/RenderingPipeline.h"
-#include "../CommonPasses/SimpleGBufferPass.h"
-#include "Passes/AmbientOcclusionPass.h"
+#include "Passes/SimpleGBufferPass.h"
+#include "Passes/CopyToOutputPass.h"
 
 int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nShowCmd)
 {
@@ -27,12 +27,12 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	RenderingPipeline *pipeline = new RenderingPipeline();
 
 	// Add passes into our pipeline
-	pipeline->setPass(0, SimpleGBufferPass::create());     
-	pipeline->setPass(1, AmbientOcclusionPass::create());  // Create a pass to shoot ambient occlusion rays
- 
+	pipeline->setPass(0, SimpleGBufferPass::create());   // This pass renders a g-buffer for the scene that's loaded
+	pipeline->setPass(1, CopyToOutputPass::create());    // This pass allows the user to select which g-buffer image to display
+
 	// Define a set of config / window parameters for our program
     SampleConfig config;
-    config.windowDesc.title = "Tutorial 5:  Uses our rasterized G-buffer, then shoots one randomly chosen ambient occlusion ray per pixel";
+    config.windowDesc.title = "Tutorial 3:  Allows you to load a scene and generate a G-buffer (and then display various textures in the G-buffer)";
     config.windowDesc.resizableWindow = true;
 
 	// Start our program!

@@ -56,7 +56,8 @@ __global__ void rand_init(curandState* rand_state) {
 	}
 }
 
-__global__ void render_init(int max_x, int max_y, curandState* rand_state) {
+__global__ void render_init(int max_x, int max_y, curandState* rand_state) 
+{
 	int i = threadIdx.x + blockIdx.x * blockDim.x;
 	int j = threadIdx.y + blockIdx.y * blockDim.y;
 	if ((i >= max_x) || (j >= max_y)) return;
@@ -68,7 +69,8 @@ __global__ void render_init(int max_x, int max_y, curandState* rand_state) {
 	curand_init(1984 + pixel_index, 0, 0, &rand_state[pixel_index]);
 }
 
-__global__ void render(vec3* fb, int max_x, int max_y, int ns, RA::camera** cam, hitable** world, curandState* rand_state) {
+__global__ void render(vec3* fb, int max_x, int max_y, int ns, RA::camera** cam, hitable** world, curandState* rand_state) 
+{
 	int i = threadIdx.x + blockIdx.x * blockDim.x;
 	int j = threadIdx.y + blockIdx.y * blockDim.y;
 	if ((i >= max_x) || (j >= max_y)) return;
@@ -134,8 +136,10 @@ __global__ void create_world(hitable** d_list, hitable** d_world, RA::camera** d
 	}
 }
 
-__global__ void free_world(hitable** d_list, hitable** d_world, RA::camera** d_camera) {
-	for (int i = 0; i < 22 * 22 + 1 + 3; i++) {
+__global__ void free_world(hitable** d_list, hitable** d_world, RA::camera** d_camera) 
+{
+	for (int i = 0; i < 22 * 22 + 1 + 3; i++) 
+	{
 		delete ((sphere*)d_list[i])->mat_ptr;
 		delete d_list[i];
 	}

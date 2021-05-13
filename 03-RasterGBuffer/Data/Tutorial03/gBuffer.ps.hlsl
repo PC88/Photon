@@ -16,25 +16,36 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 **********************************************************************************************************************/
 
-#include "Falcor.h"
-#include "../SharedUtils/RenderingPipeline.h"
-#include "../CommonPasses/SimpleGBufferPass.h"
-#include "Passes/AmbientOcclusionPass.h"
+// Falcor / Slang imports to include shared code and data structures
+__import Shading;           // Imports ShaderCommon and DefaultVS, plus material evaluation
+__import DefaultVS;         // VertexOut declaration
 
-int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nShowCmd)
+// Define our output buffer
+struct GBuffer
 {
-	// Create our rendering pipeline
-	RenderingPipeline *pipeline = new RenderingPipeline();
+	float4 wsPos    : SV_Target0;  // Our world-space position goes in color buffer 0
+	float4 wsNorm   : SV_Target1;  // Our world-space normal goes in color buffer 1
+	float4 matDif   : SV_Target2;  // Our material's diffuse channel in color buffer 2
+	float4 matSpec  : SV_Target3;  // Our material specular data in color buffer 3
+	float4 matExtra : SV_Target4;  // Our extra material parameters in color buffer 4
+};
 
-	// Add passes into our pipeline
-	pipeline->setPass(0, SimpleGBufferPass::create());     
-	pipeline->setPass(1, AmbientOcclusionPass::create());  // Create a pass to shoot ambient occlusion rays
- 
-	// Define a set of config / window parameters for our program
-    SampleConfig config;
-    config.windowDesc.title = "Tutorial 5:  Uses our rasterized G-buffer, then shoots one randomly chosen ambient occlusion ray per pixel";
-    config.windowDesc.resizableWindow = true;
+// Our main entry point for the g-buffer fragment shader.
+GBuffer main(VertexOut vsOut, uint primID : SV_PrimitiveID, float4 pos : SV_Position)
+{
+	// This is a Falcor built-in that extracts data suitable for shading routines
+	//     (see ShaderCommon.slang for the shading data structure and routines)
+	ShadingData hitPt = prepareShadingData(vsOut, gMaterial, gCamera.posW);
 
-	// Start our program!
-	RenderingPipeline::run(pipeline, config);
+	// Dump out our G buffer channels
+	GBuffer gBufOut;
+	gBufOut.wsPos    = float4(hitPt.posW, 1.f);
+	gBufOut.wsNorm   = float4(hitPt.N, length(hitPt.posW - gCamera.posW) );
+	gBufOut.matDif   = float4(hitPt.diffuse, hitPt.opacity);
+	gBufOut.matSpec  = float4(hitPt.specular, hitPt.linearRoughness);
+	gBufOut.matExtra = float4(hitPt.IoR, hitPt.doubleSidedMaterial ? 1.f : 0.f, 0.f, 0.f);
+
+	return gBufOut;
 }
+
+
