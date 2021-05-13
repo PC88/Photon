@@ -42,6 +42,14 @@ public:
 	virtual void ImGuiRender() override;
 	virtual void Render() override;
 
+
+
+    int m_switch = 1;
+    int m_switchMax = 8;
+    int m_switchMin = 0;
+    bool m_runDemo = false;
+    void run(int sw);
+
     double hit_sphere(const point3& center, double radius, const ray& r);
 
     // depth is added here to stop the recursions from blowing the stack
