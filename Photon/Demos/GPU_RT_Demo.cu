@@ -200,9 +200,6 @@ GPU_RT_Demo::GPU_RT_Demo()
 	render<<<blocks, threads>>>(fb, nx, ny, ns, d_camera, d_world, d_rand_state);
 	checkCudaErrors(cudaGetLastError());
 	checkCudaErrors(cudaDeviceSynchronize());
-	stop = clock();
-	double timer_seconds = ((double)(stop - start)) / CLOCKS_PER_SEC;
-	std::cerr << "took " << timer_seconds << " seconds.\n";
 
 	ppm img;
 	img.w = nx;
@@ -230,6 +227,10 @@ GPU_RT_Demo::GPU_RT_Demo()
 			//std::cout << ir << " " << ig << " " << ib << "\n";
 		}
 	}
+
+	stop = clock();
+	double timer_seconds = ((double)(stop - start)) / CLOCKS_PER_SEC;
+	std::cerr << "took " << timer_seconds << " seconds.\n";
 
 	img.write("gpu_test.ppm", data);
 
