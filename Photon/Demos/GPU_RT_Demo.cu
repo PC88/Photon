@@ -152,9 +152,9 @@ GPU_RT_Demo::GPU_RT_Demo()
 
 	int nx = 1200;
 	int ny = 800;
-	int ns = 10;
-	int tx = 8;
-	int ty = 8;
+	int ns = 1;
+	int tx = 24;
+	int ty = 24;
 
 	std::cerr << "Rendering a " << nx << "x" << ny << " image with " << ns << " samples per pixel ";
 	std::cerr << "in " << tx << "x" << ty << " blocks.\n";
